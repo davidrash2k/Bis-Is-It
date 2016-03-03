@@ -26,5 +26,5 @@ expr
 //Lexer
 
 NL         : '\r'? '\n';
-WS  :   [ \t\n\r]+ -> skip ;
+WS  :   [ \t]+ -> skip ;
 DIGIT: [0-9]+;

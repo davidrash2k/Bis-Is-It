@@ -12,6 +12,7 @@ import java.util.Stack;
  */
 public class ExpCalculatorBaseListener implements ExpCalculatorListener {
 	Stack<Integer> stack = new Stack<Integer>();
+	boolean error = false;
 	
 	@Override public void enterStart(ExpCalculatorParser.StartContext ctx) { }
 	/**
@@ -32,7 +33,12 @@ public class ExpCalculatorBaseListener implements ExpCalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStatement(ExpCalculatorParser.StatementContext ctx) {
-		System.out.println(stack.pop());
+		if (!error)
+			System.out.println(stack.pop());
+		else
+			System.out.println("Error :(");
+		stack = new Stack<Integer>();
+		error = false;
 	}
 	/**
 	 * {@inheritDoc}
@@ -72,16 +78,33 @@ public class ExpCalculatorBaseListener implements ExpCalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMultOrDiv(ExpCalculatorParser.MultOrDivContext ctx) {
-		Integer op1 = stack.pop();
-	    Integer op2 = stack.pop();
-	    if (ctx.getChild(1).getText().equals("*")) {
-	      stack.push(op2 * op1);
+		Integer op1 = null, op2 = null;
+		try {
+			op1 = stack.pop();
+		    op2 = stack.pop();
+		} catch (Exception e) {
+			error = true;
+		}
+	    if (op1 != null && op2 != null && ctx.getChild(1).getText().equals("*")) {
+	    	try {
+	    		stack.push(op2 * op1);
+	    	} catch (Exception e) {
+		    	error = true;
+		    }
 	    }
-	    else if (ctx.getChild(1).getText().equals("/")) {
-	      stack.push(op2 / op1);
+	    else if (op1 != null && op2 != null && ctx.getChild(1).getText().equals("/")) {
+	    	try {
+	    		stack.push(op2 / op1);
+	    	} catch (Exception e) {
+	    		error = true;
+	    	}
 	    }
-	    else {
-	      stack.push(op2 % op1);
+	    else if (op1 != null && op2 != null) {
+	    	try {
+	    		stack.push(op2 % op1);
+	    	} catch (Exception e) {
+	    		error = true;
+	    	}
 	    }
 	}
 	/**
@@ -110,13 +133,18 @@ public class ExpCalculatorBaseListener implements ExpCalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAddOrSubtract(ExpCalculatorParser.AddOrSubtractContext ctx) {
-		Integer op1 = stack.pop();
-	    Integer op2 = stack.pop();
-	    if (ctx.getChild(1).getText().equals("-"))
+		Integer op1 = null, op2 = null;
+		try {
+			op1 = stack.pop();
+		    op2 = stack.pop();
+		} catch (Exception e) {
+			error = true;
+		}
+	    if (op1 != null && op2 != null && ctx.getChild(1).getText().equals("-"))
 	    {
 	      stack.push(op2 - op1);
 	    }
-	    else
+	    else if (op1 != null && op2 != null)
 	    {
 	      stack.push(op1 + op2);
 	    }
