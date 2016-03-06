@@ -7,7 +7,8 @@ start
 	: (statement)+;
 
 statement
-	: expr NL?;
+	: expr NL
+	| expr EOF;
 
 integer
 	: unary_op? DIGIT;

@@ -139,6 +139,7 @@ public class ExpCalculatorParser extends Parser {
 			return getRuleContext(ExprContext.class,0);
 		}
 		public TerminalNode NL() { return getToken(ExpCalculatorParser.NL, 0); }
+		public TerminalNode EOF() { return getToken(ExpCalculatorParser.EOF, 0); }
 		public StatementContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -156,21 +157,28 @@ public class ExpCalculatorParser extends Parser {
 	public final StatementContext statement() throws RecognitionException {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_statement);
-		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(15);
-			expr(0);
-			setState(17);
-			_la = _input.LA(1);
-			if (_la==NL) {
+			setState(21);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,1,_ctx) ) {
+			case 1:
+				enterOuterAlt(_localctx, 1);
 				{
+				setState(15);
+				expr(0);
 				setState(16);
 				match(NL);
 				}
-			}
-
+				break;
+			case 2:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(18);
+				expr(0);
+				setState(19);
+				match(EOF);
+				}
+				break;
 			}
 		}
 		catch (RecognitionException re) {
@@ -210,16 +218,16 @@ public class ExpCalculatorParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(20);
+			setState(24);
 			_la = _input.LA(1);
 			if (_la==T__0 || _la==T__1) {
 				{
-				setState(19);
+				setState(23);
 				unary_op();
 				}
 			}
 
-			setState(22);
+			setState(26);
 			match(DIGIT);
 			}
 		}
@@ -256,7 +264,7 @@ public class ExpCalculatorParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(24);
+			setState(28);
 			_la = _input.LA(1);
 			if ( !(_la==T__0 || _la==T__1) ) {
 			_errHandler.recoverInline(this);
@@ -366,7 +374,7 @@ public class ExpCalculatorParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(32);
+			setState(36);
 			switch (_input.LA(1)) {
 			case T__2:
 				{
@@ -374,11 +382,11 @@ public class ExpCalculatorParser extends Parser {
 				_ctx = _localctx;
 				_prevctx = _localctx;
 
-				setState(27);
+				setState(31);
 				match(T__2);
-				setState(28);
+				setState(32);
 				expr(0);
-				setState(29);
+				setState(33);
 				match(T__3);
 				}
 				break;
@@ -389,7 +397,7 @@ public class ExpCalculatorParser extends Parser {
 				_localctx = new IntLiteralContext(_localctx);
 				_ctx = _localctx;
 				_prevctx = _localctx;
-				setState(31);
+				setState(35);
 				integer();
 				}
 				break;
@@ -397,7 +405,7 @@ public class ExpCalculatorParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(42);
+			setState(46);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
@@ -405,23 +413,23 @@ public class ExpCalculatorParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(40);
+					setState(44);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,4,_ctx) ) {
 					case 1:
 						{
 						_localctx = new MultOrDivContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(34);
+						setState(38);
 						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(35);
+						setState(39);
 						_la = _input.LA(1);
 						if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__4) | (1L << T__5) | (1L << T__6))) != 0)) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(36);
+						setState(40);
 						expr(4);
 						}
 						break;
@@ -429,23 +437,23 @@ public class ExpCalculatorParser extends Parser {
 						{
 						_localctx = new AddOrSubtractContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(37);
+						setState(41);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(38);
+						setState(42);
 						_la = _input.LA(1);
 						if ( !(_la==T__0 || _la==T__1) ) {
 						_errHandler.recoverInline(this);
 						} else {
 							consume();
 						}
-						setState(39);
+						setState(43);
 						expr(3);
 						}
 						break;
 					}
 					} 
 				}
-				setState(44);
+				setState(48);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,5,_ctx);
 			}
@@ -480,19 +488,20 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\f\60\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n\2\r\2\16\2\17\3\3\3\3\5\3\24"+
-		"\n\3\3\4\5\4\27\n\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\5\6#\n\6\3"+
-		"\6\3\6\3\6\3\6\3\6\3\6\7\6+\n\6\f\6\16\6.\13\6\3\6\2\3\n\7\2\4\6\b\n\2"+
-		"\4\3\2\3\4\3\2\7\t\60\2\r\3\2\2\2\4\21\3\2\2\2\6\26\3\2\2\2\b\32\3\2\2"+
-		"\2\n\"\3\2\2\2\f\16\5\4\3\2\r\f\3\2\2\2\16\17\3\2\2\2\17\r\3\2\2\2\17"+
-		"\20\3\2\2\2\20\3\3\2\2\2\21\23\5\n\6\2\22\24\7\n\2\2\23\22\3\2\2\2\23"+
-		"\24\3\2\2\2\24\5\3\2\2\2\25\27\5\b\5\2\26\25\3\2\2\2\26\27\3\2\2\2\27"+
-		"\30\3\2\2\2\30\31\7\f\2\2\31\7\3\2\2\2\32\33\t\2\2\2\33\t\3\2\2\2\34\35"+
-		"\b\6\1\2\35\36\7\5\2\2\36\37\5\n\6\2\37 \7\6\2\2 #\3\2\2\2!#\5\6\4\2\""+
-		"\34\3\2\2\2\"!\3\2\2\2#,\3\2\2\2$%\f\5\2\2%&\t\3\2\2&+\5\n\6\6\'(\f\4"+
-		"\2\2()\t\2\2\2)+\5\n\6\5*$\3\2\2\2*\'\3\2\2\2+.\3\2\2\2,*\3\2\2\2,-\3"+
-		"\2\2\2-\13\3\2\2\2.,\3\2\2\2\b\17\23\26\"*,";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\f\64\4\2\t\2\4\3"+
+		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\6\2\16\n\2\r\2\16\2\17\3\3\3\3\3\3\3"+
+		"\3\3\3\3\3\5\3\30\n\3\3\4\5\4\33\n\4\3\4\3\4\3\5\3\5\3\6\3\6\3\6\3\6\3"+
+		"\6\3\6\5\6\'\n\6\3\6\3\6\3\6\3\6\3\6\3\6\7\6/\n\6\f\6\16\6\62\13\6\3\6"+
+		"\2\3\n\7\2\4\6\b\n\2\4\3\2\3\4\3\2\7\t\64\2\r\3\2\2\2\4\27\3\2\2\2\6\32"+
+		"\3\2\2\2\b\36\3\2\2\2\n&\3\2\2\2\f\16\5\4\3\2\r\f\3\2\2\2\16\17\3\2\2"+
+		"\2\17\r\3\2\2\2\17\20\3\2\2\2\20\3\3\2\2\2\21\22\5\n\6\2\22\23\7\n\2\2"+
+		"\23\30\3\2\2\2\24\25\5\n\6\2\25\26\7\2\2\3\26\30\3\2\2\2\27\21\3\2\2\2"+
+		"\27\24\3\2\2\2\30\5\3\2\2\2\31\33\5\b\5\2\32\31\3\2\2\2\32\33\3\2\2\2"+
+		"\33\34\3\2\2\2\34\35\7\f\2\2\35\7\3\2\2\2\36\37\t\2\2\2\37\t\3\2\2\2 "+
+		"!\b\6\1\2!\"\7\5\2\2\"#\5\n\6\2#$\7\6\2\2$\'\3\2\2\2%\'\5\6\4\2& \3\2"+
+		"\2\2&%\3\2\2\2\'\60\3\2\2\2()\f\5\2\2)*\t\3\2\2*/\5\n\6\6+,\f\4\2\2,-"+
+		"\t\2\2\2-/\5\n\6\5.(\3\2\2\2.+\3\2\2\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3"+
+		"\2\2\2\61\13\3\2\2\2\62\60\3\2\2\2\b\17\27\32&.\60";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

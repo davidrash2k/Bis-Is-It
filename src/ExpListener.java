@@ -3,6 +3,8 @@
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
+
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 /**
@@ -33,8 +35,12 @@ public class ExpListener implements ExpCalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitStatement(ExpCalculatorParser.StatementContext ctx) throws RuntimeException {
-		if (!error)
-			System.out.println(stack.pop());
+		try {
+			if (!error)
+				System.out.println(stack.pop());
+		} catch (EmptyStackException e) {
+			
+		}
 		stack = new Stack<Integer>();
 		error = false;
 	}
@@ -205,5 +211,9 @@ public class ExpListener implements ExpCalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void visitErrorNode(ErrorNode node) {
+	}
+	
+	public void notifyError(String errorMsg) {
+		error = true;
 	}
 }

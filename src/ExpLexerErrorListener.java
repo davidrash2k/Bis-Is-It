@@ -5,6 +5,11 @@ import org.antlr.v4.runtime.atn.ATNConfigSet;
 import org.antlr.v4.runtime.dfa.DFA;
 public class ExpLexerErrorListener implements ANTLRErrorListener{
 
+	ExpListener listener;
+	public ExpLexerErrorListener (ExpListener listener) {
+		this.listener = listener;
+	}
+	
 	@Override
 	public void reportAmbiguity(Parser arg0, DFA arg1, int arg2, int arg3,
 			boolean arg4, BitSet arg5, ATNConfigSet arg6) {
@@ -30,8 +35,7 @@ public class ExpLexerErrorListener implements ANTLRErrorListener{
 	public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol,
             int line, int charPositionInLine,
             String msg, RecognitionException e) {
-		System.err.println("Lexical Error: at line " + line + ":" + charPositionInLine);
-		
+		System.err.println("Lexical Error: " + msg + " (line " + line + ":" + charPositionInLine + ")");
+		listener.notifyError(msg);
 	}
-
 }
