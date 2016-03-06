@@ -27,9 +27,10 @@ public class ExpLexerErrorListener implements ANTLRErrorListener{
 	}
 
 	@Override
-	public void syntaxError(Recognizer<?, ?> arg0, Object arg1, int arg2,
-			int arg3, String arg4, RecognitionException arg5) {
-		System.err.println("hello it's me");
+	public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol,
+            int line, int charPositionInLine,
+            String msg, RecognitionException e) {
+		System.err.println("Lexical Error: at line " + line + ":" + charPositionInLine);
 		
 	}
 

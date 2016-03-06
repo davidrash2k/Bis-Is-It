@@ -18,11 +18,14 @@ public class BisIsItLang
         lexer.removeErrorListeners();
         lexer.addErrorListener(new ExpLexerErrorListener());
     	CommonTokenStream tokens = new CommonTokenStream(lexer);
-        ExpCalculatorParser p = new ExpCalculatorParser(tokens);
-      
-        p.setBuildParseTree(true);
-        p.addParseListener(new ExpListener());
-        ParserRuleContext t = p.start();
+    	
+        ExpCalculatorParser parser = new ExpCalculatorParser(tokens);
+        parser.setBuildParseTree(true);
+        //parser.setErrorHandler(new ExpErrorStrategy());
+        parser.removeErrorListeners();
+        parser.addErrorListener(new ExpParserErrorListener());
+        parser.addParseListener(new ExpListener());
+        ParserRuleContext t = parser.start();
     }
     
 }

@@ -35,8 +35,6 @@ public class ExpListener implements ExpCalculatorListener {
 	@Override public void exitStatement(ExpCalculatorParser.StatementContext ctx) throws RuntimeException {
 		if (!error)
 			System.out.println(stack.pop());
-		else
-			System.err.println("Error :(");
 		stack = new Stack<Integer>();
 		error = false;
 	}
@@ -88,23 +86,26 @@ public class ExpListener implements ExpCalculatorListener {
 	    if (op1 != null && op2 != null && ctx.getChild(1).getText().equals("*")) {
 	    	try {
 	    		stack.push(op2 * op1);
-	    	} catch (Exception e) {
+	    	} catch (ArithmeticException e) {
 		    	error = true;
+		    	System.err.println("Arithmetic Exception :(");
 		    }
 	    }
 	    else if (op1 != null && op2 != null && ctx.getChild(1).getText().equals("/")) {
 	    	try {
 	    		stack.push(op2 / op1);
-	    	} catch (Exception e) {
-	    		error = true;
-	    	}
+	    	} catch (ArithmeticException e) {
+		    	error = true;
+		    	System.err.println("Arithmetic Exception :(");
+		    }
 	    }
 	    else if (op1 != null && op2 != null) {
 	    	try {
 	    		stack.push(op2 % op1);
-	    	} catch (Exception e) {
-	    		error = true;
-	    	}
+	    	} catch (ArithmeticException e) {
+		    	error = true;
+		    	System.err.println("Arithmetic Exception :(");
+		    }
 	    }
 	}
 	/**
@@ -119,7 +120,13 @@ public class ExpListener implements ExpCalculatorListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIntLiteral(ExpCalculatorParser.IntLiteralContext ctx) { 
-		stack.push(Integer.parseInt(ctx.integer().getText()));
+		try {
+			int input = Integer.parseInt(ctx.integer().getText());
+			stack.push(input);
+		} catch (NumberFormatException e) {
+			System.err.println("Invalid integer :(");
+			error = true;
+		}
 	}
 	/**
 	 * {@inheritDoc}
@@ -142,11 +149,23 @@ public class ExpListener implements ExpCalculatorListener {
 		}
 	    if (op1 != null && op2 != null && ctx.getChild(1).getText().equals("-"))
 	    {
-	      stack.push(op2 - op1);
+	    	try {
+		    	int result = Math.subtractExact(op2, op1);
+		    	stack.push(result);
+	    	} catch (ArithmeticException e) {
+		    	error = true;
+		    	System.err.println("Arithmetic Exception :(");
+		    }
 	    }
 	    else if (op1 != null && op2 != null)
 	    {
-	      stack.push(op1 + op2);
+	    	try {
+	    		int result = Math.addExact(op1, op2);
+	    		stack.push(result);
+	    	} catch (ArithmeticException e) {
+		    	error = true;
+		    	System.err.println("Arithmetic Exception :(");
+		    }
 	    }
 	}
 	/**
