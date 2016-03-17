@@ -3,7 +3,6 @@ import java.util.BitSet;
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.atn.ATNConfigSet;
 import org.antlr.v4.runtime.dfa.DFA;
-import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 public class ExpParserErrorListener implements ANTLRErrorListener {
 	

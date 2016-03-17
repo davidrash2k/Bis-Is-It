@@ -1,0 +1,2 @@
+Run BisIsIt.jar in cmd with input.txt as argument
+Ex: java -jar BisIsIt.jar input.txt

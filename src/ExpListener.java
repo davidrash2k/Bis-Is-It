@@ -28,7 +28,9 @@ public class ExpListener implements ExpCalculatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(ExpCalculatorParser.StatementContext ctx) { }
+	@Override public void enterStatement(ExpCalculatorParser.StatementContext ctx) {
+		error = false;
+	}
 	/**
 	 * {@inheritDoc}
 	 *

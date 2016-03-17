@@ -17,6 +17,56 @@ public interface ExpCalculatorListener extends ParseTreeListener {
 	 */
 	void exitStart(ExpCalculatorParser.StartContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunc(ExpCalculatorParser.FuncContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#func}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunc(ExpCalculatorParser.FuncContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#main_func}.
+	 * @param ctx the parse tree
+	 */
+	void enterMain_func(ExpCalculatorParser.Main_funcContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#main_func}.
+	 * @param ctx the parse tree
+	 */
+	void exitMain_func(ExpCalculatorParser.Main_funcContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#params}.
+	 * @param ctx the parse tree
+	 */
+	void enterParams(ExpCalculatorParser.ParamsContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#params}.
+	 * @param ctx the parse tree
+	 */
+	void exitParams(ExpCalculatorParser.ParamsContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#params2}.
+	 * @param ctx the parse tree
+	 */
+	void enterParams2(ExpCalculatorParser.Params2Context ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#params2}.
+	 * @param ctx the parse tree
+	 */
+	void exitParams2(ExpCalculatorParser.Params2Context ctx);
+	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#data_type}.
+	 * @param ctx the parse tree
+	 */
+	void enterData_type(ExpCalculatorParser.Data_typeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#data_type}.
+	 * @param ctx the parse tree
+	 */
+	void exitData_type(ExpCalculatorParser.Data_typeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ExpCalculatorParser#statement}.
 	 * @param ctx the parse tree
 	 */
