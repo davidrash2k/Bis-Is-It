@@ -5,7 +5,7 @@ grammar ExpCalculator;
 
 // Production Rule
 start
-	: func_define main_func;
+	: func_define main_func EOF;
 	
 func_define
 	: (func)*;
@@ -23,7 +23,7 @@ params
 	
 // Function Call
 func_call_state 
-	: func_call;
+	: func_call TERMINATOR;
 	 
 func_call
 	: FUNC_CALL FUNC_IDENTIFIER OPEN_PAR call_params? CLOSE_PAR;
@@ -46,10 +46,10 @@ statement
 	
 // Variable Declaration
 vardec_state
-	: data_type arr? var;
+	: data_type arr? var TERMINATOR;
 
 consvardec_state
-	: CONSTANT arr? VAR_IDENTIFIER assignment;
+	: CONSTANT arr? VAR_IDENTIFIER assignment TERMINATOR;
 
 var
 	: var COMMA var 
@@ -71,7 +71,8 @@ arr
 	
 // Assignment Statement
 ass_state
-	: VAR_IDENTIFIER arr? assignment?;
+	: VAR_IDENTIFIER arr? assignment TERMINATOR
+	| ass_state_operator TERMINATOR;
 
 assignment
 	: ASS_OPERATOR val;
@@ -81,17 +82,21 @@ val
 	| condition;
 	
 ass_state_operator
-	: VAR_IDENTIFIER  
-	| VAR_IDENTIFIER ass_operator;
+	: VAR_IDENTIFIER arr? ass_operator;
 	
 ass_operator
 	: INCREMENT_OPERATOR 
 	| DECREMENT_OPERATOR ;
 
 // Math Expressions 
+
+unary_op
+	: '+'
+	| '-';
+	
 num_val
-	: DIGIT 
-	| FLOAT 
+	: unary_op? DIGIT EXPONENT?
+	| unary_op? FLOAT EXPONENT?
 	| CHAR
 	| func_call 
 	| VAR_IDENTIFIER ;
@@ -148,6 +153,7 @@ for_state
 
 NL : '\r'? '\n';
 WS :  [ \t\n\r]+ -> skip ;
+EXPONENT : '^'('0'..'9')+;
 DIGIT : ('0'..'9')+;
 FLOAT : DIGIT ('.'DIGIT)? | ('.'DIGIT);
 STRING: '"' (' '..'~')* '"';

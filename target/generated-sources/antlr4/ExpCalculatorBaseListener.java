@@ -267,6 +267,18 @@ public class ExpCalculatorBaseListener implements ExpCalculatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterUnary_op(ExpCalculatorParser.Unary_opContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitUnary_op(ExpCalculatorParser.Unary_opContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterNum_val(ExpCalculatorParser.Num_valContext ctx) { }
 	/**
 	 * {@inheritDoc}

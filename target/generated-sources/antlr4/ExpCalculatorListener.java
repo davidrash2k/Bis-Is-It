@@ -217,6 +217,16 @@ public interface ExpCalculatorListener extends ParseTreeListener {
 	 */
 	void exitAss_operator(ExpCalculatorParser.Ass_operatorContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#unary_op}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnary_op(ExpCalculatorParser.Unary_opContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#unary_op}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnary_op(ExpCalculatorParser.Unary_opContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ExpCalculatorParser#num_val}.
 	 * @param ctx the parse tree
 	 */
