@@ -13,17 +13,17 @@ public class BisIsItLang
      */
     public static void main(String[] args) throws IOException
     {
-    	ExpListener parseListener = new ExpListener();
+    	ExpCalculatorBaseListener parseListener = new ExpCalculatorBaseListener();
     	ExpCalculatorLexer lexer = new ExpCalculatorLexer(new ANTLRFileStream(args[0]));
-        lexer.removeErrorListeners();
-        lexer.addErrorListener(new ExpLexerErrorListener(parseListener));
+        /*lexer.removeErrorListeners();
+        lexer.addErrorListener(new ExpLexerErrorListener(parseListener));*/
     	CommonTokenStream tokens = new CommonTokenStream(lexer);
     	
         ExpCalculatorParser parser = new ExpCalculatorParser(tokens);
         parser.setBuildParseTree(true);
         //parser.setErrorHandler(new ExpErrorStrategy());
-        parser.removeErrorListeners();
-        parser.addErrorListener(new ExpParserErrorListener(parseListener));
+        /*parser.removeErrorListeners();
+        parser.addErrorListener(new ExpParserErrorListener(parseListener));*/
         parser.addParseListener(parseListener);
         ParserRuleContext t = parser.start();
     }

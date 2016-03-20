@@ -218,4 +218,95 @@ public class ExpListener implements ExpCalculatorListener {
 	public void notifyError(String errorMsg) {
 		error = true;
 	}
+
+	@Override
+	public void enterMain_func(ExpCalculatorParser.Main_funcContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitMain_func(ExpCalculatorParser.Main_funcContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterParams(ExpCalculatorParser.ParamsContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitParams(ExpCalculatorParser.ParamsContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterParams2(ExpCalculatorParser.Params2Context ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitParams2(ExpCalculatorParser.Params2Context ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterData_type(ExpCalculatorParser.Data_typeContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitData_type(ExpCalculatorParser.Data_typeContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterFunc(ExpCalculatorParser.FuncContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitFunc(ExpCalculatorParser.FuncContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterMain_func(Main_funcContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitMain_func(Main_funcContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterParams(ParamsContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitParams(ParamsContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterParams2(Params2Context ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitParams2(Params2Context ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void enterData_type(Data_typeContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void exitData_type(Data_typeContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
 }
