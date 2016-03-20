@@ -12,7 +12,7 @@ func_define
 
 // Main Function
 main_func
-	: MAIN_FUNC PARAMS_KEYWORD params FUNC_DEFINITION OPEN_BRE codeblock OPEN_BRE ;
+	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE ;
 
 // Defining a Function
 func 
@@ -154,8 +154,8 @@ for_state
 
 //List of Tokens
 
-NL : '\r'? '\n';
-WS :  [ \t\n\r]+ -> skip ;
+NL : '\r'? '\n' -> skip;
+WS :  [ \t]+ -> skip ;
 EXPONENT : '^'('0'..'9')+;
 DIGIT : ('0'..'9')+;
 FLOAT : DIGIT ('.'DIGIT)? | ('.'DIGIT);
