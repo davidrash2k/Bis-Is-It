@@ -16,10 +16,13 @@ main_func
 
 // Defining a Function
 func 
-	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD params FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE;
+	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD params FUNC_DEFINITION OPEN_BRE codeblock return_state? CLOSE_BRE;
 	
 params
 	: data_type VAR_IDENTIFIER (COMMA params)*;
+
+return_state
+	: RETURN val TERMINATOR;
 	
 // Function Call
 func_call_state 
@@ -207,5 +210,3 @@ FUNC_CALL: 'tawaga';
 PARAMS_KEYWORD: '>>';
 MAIN_FUNC: 'sugod_diri';
 RETURN: 'ibalik';
-
-

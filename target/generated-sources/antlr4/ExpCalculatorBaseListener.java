@@ -75,6 +75,18 @@ public class ExpCalculatorBaseListener implements ExpCalculatorListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterReturn_state(ExpCalculatorParser.Return_stateContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitReturn_state(ExpCalculatorParser.Return_stateContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFunc_call_state(ExpCalculatorParser.Func_call_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -57,6 +57,16 @@ public interface ExpCalculatorListener extends ParseTreeListener {
 	 */
 	void exitParams(ExpCalculatorParser.ParamsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link ExpCalculatorParser#return_state}.
+	 * @param ctx the parse tree
+	 */
+	void enterReturn_state(ExpCalculatorParser.Return_stateContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link ExpCalculatorParser#return_state}.
+	 * @param ctx the parse tree
+	 */
+	void exitReturn_state(ExpCalculatorParser.Return_stateContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link ExpCalculatorParser#func_call_state}.
 	 * @param ctx the parse tree
 	 */
