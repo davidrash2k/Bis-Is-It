@@ -1,4 +1,5 @@
 // Generated from Bis.g4 by ANTLR 4.5.2
+package bis.is.it;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -188,6 +189,12 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCond_state(BisParser.Cond_stateContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BisParser#else_if_block}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElse_if_block(BisParser.Else_if_blockContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BisParser#else_block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -211,12 +218,6 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCond_operator(BisParser.Cond_operatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BisParser#logical_operator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLogical_operator(BisParser.Logical_operatorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#while_state}.
 	 * @param ctx the parse tree

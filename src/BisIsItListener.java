@@ -4,32 +4,8 @@ import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-import BisParser.ArrContext;
-import BisParser.Ass_operatorContext;
-import BisParser.Ass_stateContext;
-import BisParser.Ass_state_operatorContext;
-import BisParser.AssignmentContext;
-import BisParser.Call_paramsContext;
-import BisParser.CodeblockContext;
-import BisParser.Cond_operatorContext;
-import BisParser.Cond_stateContext;
-import BisParser.Cond_valContext;
-import BisParser.ConditionContext;
-import BisParser.Consvardec_stateContext;
-import BisParser.Do_while_stateContext;
-import BisParser.Else_blockContext;
-import BisParser.For_stateContext;
-import BisParser.Func_callContext;
-import BisParser.Func_call_stateContext;
-import BisParser.Func_data_typeContext;
-import BisParser.Func_defineContext;
-import BisParser.Logical_operatorContext;
-import BisParser.Num_valContext;
-import BisParser.Return_stateContext;
-import BisParser.ValContext;
-import BisParser.VarContext;
-import BisParser.Vardec_stateContext;
-import BisParser.While_stateContext;
+import bis.is.it.BisParser;
+import bis.is.it.BisListener;
 
 import java.util.EmptyStackException;
 import java.util.Stack;
@@ -43,19 +19,19 @@ public class BisIsItListener implements BisListener {
 	Stack<Integer> stack = new Stack<Integer>();
 	boolean error = false;
 	
-	@Override public void enterStart(BisParser.StartContext ctx) { }
+	@Override public void enterStart(StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStart(BisParser.StartContext ctx) { }
+	@Override public void exitStart(StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(BisParser.StatementContext ctx) {
+	@Override public void enterStatement(StatementContext ctx) {
 		error = false;
 	}
 	/**
@@ -63,7 +39,7 @@ public class BisIsItListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(BisParser.StatementContext ctx) throws RuntimeException {
+	@Override public void exitStatement(StatementContext ctx) throws RuntimeException {
 		try {
 			if (!error)
 				System.out.println(stack.pop());
@@ -78,13 +54,13 @@ public class BisIsItListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterInteger(BisParser.IntegerContext ctx) { }
+	@Override public void enterInteger(IntegerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitInteger(BisParser.IntegerContext ctx) { 
+	@Override public void exitInteger(IntegerContext ctx) { 
 		
 	}
 	/**
@@ -92,25 +68,25 @@ public class BisIsItListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnary_op(BisParser.Unary_opContext ctx) { }
+	@Override public void enterUnary_op(Unary_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnary_op(BisParser.Unary_opContext ctx) { }
+	@Override public void exitUnary_op(Unary_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultOrDiv(BisParser.MultOrDivContext ctx) { }
+	@Override public void enterMultOrDiv(MultOrDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultOrDiv(BisParser.MultOrDivContext ctx) {
+	@Override public void exitMultOrDiv(MultOrDivContext ctx) {
 		Integer op1 = null, op2 = null;
 		try {
 			op1 = stack.pop();
@@ -148,13 +124,13 @@ public class BisIsItListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntLiteral(BisParser.IntLiteralContext ctx) { }
+	@Override public void enterIntLiteral(IntLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIntLiteral(BisParser.IntLiteralContext ctx) { 
+	@Override public void exitIntLiteral(IntLiteralContext ctx) { 
 		try {
 			int input = Integer.parseInt(ctx.integer().getText());
 			stack.push(input);
@@ -168,13 +144,13 @@ public class BisIsItListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAddOrSubtract(BisParser.AddOrSubtractContext ctx) { }
+	@Override public void enterAddOrSubtract(AddOrSubtractContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAddOrSubtract(BisParser.AddOrSubtractContext ctx) {
+	@Override public void exitAddOrSubtract(AddOrSubtractContext ctx) {
 		Integer op1 = null, op2 = null;
 		try {
 			op1 = stack.pop();
@@ -208,13 +184,13 @@ public class BisIsItListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenExpr(BisParser.ParenExprContext ctx) { }
+	@Override public void enterParenExpr(ParenExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParenExpr(BisParser.ParenExprContext ctx) { }
+	@Override public void exitParenExpr(ParenExprContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -247,52 +223,52 @@ public class BisIsItListener implements BisListener {
 	}
 
 	@Override
-	public void enterMain_func(BisParser.Main_funcContext ctx) {
+	public void enterMain_func(Main_funcContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void exitMain_func(BisParser.Main_funcContext ctx) {
+	public void exitMain_func(Main_funcContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void enterParams(BisParser.ParamsContext ctx) {
+	public void enterParams(ParamsContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void exitParams(BisParser.ParamsContext ctx) {
+	public void exitParams(ParamsContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void enterParams2(BisParser.Params2Context ctx) {
+	public void enterParams2(Params2Context ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void exitParams2(BisParser.Params2Context ctx) {
+	public void exitParams2(Params2Context ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void enterData_type(BisParser.Data_typeContext ctx) {
+	public void enterData_type(Data_typeContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void exitData_type(BisParser.Data_typeContext ctx) {
+	public void exitData_type(Data_typeContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void enterFunc(BisParser.FuncContext ctx) {
+	public void enterFunc(FuncContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public void exitFunc(BisParser.FuncContext ctx) {
+	public void exitFunc(FuncContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -54,6 +54,7 @@ FUNC_CALL=53
 PARAMS_KEYWORD=54
 MAIN_FUNC=55
 RETURN=56
+'='=10
 'numero'=11
 'lutaw'=12
 'pisi'=13
@@ -83,6 +84,7 @@ RETURN=56
 '<='=38
 '>'=39
 '>='=40
+'=='=41
 '<>'=42
 'ug'=43
 'o'=44

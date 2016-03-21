@@ -1,4 +1,33 @@
+/*THIS FUNCTION DOES NOTHING*/
+numero func.ano >> >>>
+{
+  hantodhantod lutaw _floatYeah = 10.2;
+  numero $3$ _arr;
+  _arr$0$ = 1;
+  numero _ito = 10 + 0.5^2;
+  habang ( _ito > 0 )
+  {
+	habang ( _hindiIto < 10 o 10 == 1 ug dili(1 < -1))
+        {
+           kung ( dili (_hindiIto < 10 o 10 == 1 ug dili(1 < -1))) di
+           {
+               _ito = 2;
+           }
+           kungdili ( _ito >= 2) di
+           {
+               _dito = 3;
+           }
+           kungwalagyud
+           {
+  	        tawaga func.sulat("Ito yun e" + _hindiIto);
+                _ito--;
+           }
+	}
+  }
+  ibalik _ito;
+}
+
 sugod_diri >>>
 {
-  tawaga func.sulat("Hello World");
+  tawaga func.sulat("Hello World", tawaga func.ano());
 }

@@ -1,4 +1,5 @@
 // Generated from Bis.g4 by ANTLR 4.5.2
+package bis.is.it;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -219,6 +220,13 @@ public class BisBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Bi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitElse_if_block(BisParser.Else_if_blockContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitElse_block(BisParser.Else_blockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -241,13 +249,6 @@ public class BisBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Bi
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitCond_operator(BisParser.Cond_operatorContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitLogical_operator(BisParser.Logical_operatorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

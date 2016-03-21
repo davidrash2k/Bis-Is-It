@@ -6,9 +6,9 @@ import org.antlr.v4.runtime.dfa.DFA;
 
 public class BisParserErrorListener implements ANTLRErrorListener {
 	
-	BisIsItListener listener;
+	BisIsItCustomListener listener;
 	
-	public BisParserErrorListener(BisIsItListener listener) {
+	public BisParserErrorListener(BisIsItCustomListener listener) {
 		this.listener = listener;
 	}
 

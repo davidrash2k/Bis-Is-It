@@ -3,20 +3,20 @@ grammar Bis;
 
 //Parser
 
-// Production Rule
+/* Production Rule */
 start
 	: func_define main_func EOF;
 	
 func_define
 	: (func)*;
 
-// Main Function
+/* Main Function */
 main_func
 	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE ;
 
-// Defining a Function
+/* Defining a Function */
 func 
-	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD params FUNC_DEFINITION OPEN_BRE codeblock return_state? CLOSE_BRE;
+	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD params? FUNC_DEFINITION OPEN_BRE codeblock return_state? CLOSE_BRE;
 	
 params
 	: data_type VAR_IDENTIFIER (COMMA params)*;
@@ -24,7 +24,7 @@ params
 return_state
 	: RETURN val TERMINATOR;
 	
-// Function Call
+/* Function Call */
 func_call_state 
 	: func_call TERMINATOR;
 	 
@@ -34,25 +34,26 @@ func_call
 call_params
 	: val (COMMA call_params)*;
 	 	
-// Code Block
+/* Code Block */
 codeblock 
 	: (statement)*;
 
 statement
 	: ass_state 
 	| vardec_state 
+	| consvardec_state
 	| cond_state 
 	| while_state 
 	| do_while_state 
 	| for_state 
 	| func_call_state;
 	
-// Variable Declaration
+/* Variable Declaration */
 vardec_state
 	: data_type arr? var TERMINATOR;
 
 consvardec_state
-	: CONSTANT arr? VAR_IDENTIFIER assignment TERMINATOR;
+	: CONSTANT data_type VAR_IDENTIFIER assignment TERMINATOR;
 
 var
 	: var COMMA var 
@@ -72,7 +73,7 @@ data_type
 arr
 	: ARRAY_DELIM DIGIT ARRAY_DELIM ;
 	
-// Assignment Statement
+/* Assignment Statement */
 ass_state
 	: VAR_IDENTIFIER arr? assignment TERMINATOR
 	| ass_state_operator TERMINATOR;
@@ -80,9 +81,11 @@ ass_state
 assignment
 	: ASS_OPERATOR val;
 
+//Value which can be assigned to a variable/passed to function
 val
 	: cond_val 
 	| condition;
+/////
 	
 ass_state_operator
 	: VAR_IDENTIFIER arr? ass_operator;
@@ -91,18 +94,20 @@ ass_operator
 	: INCREMENT_OPERATOR 
 	| DECREMENT_OPERATOR ;
 
-// Math Expressions 
+/* Math Expressions */
 
 unary_op
 	: '+'
 	| '-';
-	
+
+//Value which can be evaluated in an expression
 num_val
 	: unary_op? DIGIT EXPONENT?
 	| unary_op? FLOAT EXPONENT?
 	| CHAR
 	| func_call 
 	| VAR_IDENTIFIER ;
+////////
 
 expr                            
     : OPEN_PAR expr CLOSE_PAR              # parenExpr
@@ -110,22 +115,28 @@ expr
     | expr (ADD_OPERATOR|SUBTRACT_OPERATOR) expr       # addOrSubtract
     | num_val                   # intLiteral;
 
-// Conditional Statement
+/* Conditional Statement */
 cond_state
-	: IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE  else_block?;
+	: IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE  else_if_block* else_block?;
+
+else_if_block
+	: ELSE_IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE?;
 
 else_block
-	: ELSE_IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE else_block?
-	| ELSE_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE ;
-
+    : ELSE_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE;
+    
+//Value which can be compared
 cond_val
 	: expr 
 	| STRING
+	| STRING ADD_OPERATOR expr
 	| BOOLEAN;
+////
 
 condition
 	: NOT_OPERATOR? OPEN_PAR condition CLOSE_PAR
-	| condition logical_operator condition 
+	| condition AND_OPERATOR condition
+	| condition OR_OPERATOR condition
 	| cond_val cond_operator cond_val;
 	
 cond_operator
@@ -135,12 +146,8 @@ cond_operator
 	| GREATER_THAN_EQUAL_TO_OPERATOR 
 	| EQUAL_TO_OPERATOR 
 	| NOT_EQUAL_TO_OPERATOR;
-	
-logical_operator
-	: AND_OPERATOR 
-	| OR_OPERATOR;
 
-// Loop Statements
+/* Loop Statements */
 while_state
 	: WHILE_LOOP OPEN_PAR condition CLOSE_PAR OPEN_BRE codeblock CLOSE_BRE;
 
@@ -194,7 +201,7 @@ LESS_THAN_OPERATOR: '<';
 LESS_THAN_EQUAL_TO_OPERATOR: '<=';
 GREATER_THAN_OPERATOR: '>';
 GREATER_THAN_EQUAL_TO_OPERATOR: '>=';
-EQUAL_TO_OPERATOR: '=';
+EQUAL_TO_OPERATOR: '==';
 NOT_EQUAL_TO_OPERATOR: '<>';
 AND_OPERATOR: 'ug';
 OR_OPERATOR: 'o';

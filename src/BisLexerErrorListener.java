@@ -5,8 +5,8 @@ import org.antlr.v4.runtime.atn.ATNConfigSet;
 import org.antlr.v4.runtime.dfa.DFA;
 public class BisLexerErrorListener implements ANTLRErrorListener{
 
-	BisIsItListener listener;
-	public BisLexerErrorListener (BisIsItListener listener) {
+	BisIsItCustomListener listener;
+	public BisLexerErrorListener (BisIsItCustomListener listener) {
 		this.listener = listener;
 	}
 	

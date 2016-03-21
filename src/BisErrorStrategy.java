@@ -1,6 +1,8 @@
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.IntervalSet;
 
+import bis.is.it.BisParser;
+
 public class BisErrorStrategy extends DefaultErrorStrategy {
 	
 	public void recover(Parser recognizer, RecognitionException e) {

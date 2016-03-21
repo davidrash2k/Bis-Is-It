@@ -1,4 +1,5 @@
 // Generated from Bis.g4 by ANTLR 4.5.2
+package bis.is.it;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -305,6 +306,16 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitCond_state(BisParser.Cond_stateContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link BisParser#else_if_block}.
+	 * @param ctx the parse tree
+	 */
+	void enterElse_if_block(BisParser.Else_if_blockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BisParser#else_if_block}.
+	 * @param ctx the parse tree
+	 */
+	void exitElse_if_block(BisParser.Else_if_blockContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link BisParser#else_block}.
 	 * @param ctx the parse tree
 	 */
@@ -344,16 +355,6 @@ public interface BisListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCond_operator(BisParser.Cond_operatorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link BisParser#logical_operator}.
-	 * @param ctx the parse tree
-	 */
-	void enterLogical_operator(BisParser.Logical_operatorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link BisParser#logical_operator}.
-	 * @param ctx the parse tree
-	 */
-	void exitLogical_operator(BisParser.Logical_operatorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#while_state}.
 	 * @param ctx the parse tree
