@@ -1,459 +1,459 @@
-// Generated from ExpCalculator.g4 by ANTLR 4.5.2
+// Generated from Bis.g4 by ANTLR 4.5.2
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
 /**
- * This class provides an empty implementation of {@link ExpCalculatorListener},
+ * This class provides an empty implementation of {@link BisListener},
  * which can be extended to create a listener which only needs to handle a subset
  * of the available methods.
  */
-public class ExpCalculatorBaseListener implements ExpCalculatorListener {
+public class BisBaseListener implements BisListener {
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStart(ExpCalculatorParser.StartContext ctx) { }
+	@Override public void enterStart(BisParser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStart(ExpCalculatorParser.StartContext ctx) { }
+	@Override public void exitStart(BisParser.StartContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc_define(ExpCalculatorParser.Func_defineContext ctx) { }
+	@Override public void enterFunc_define(BisParser.Func_defineContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc_define(ExpCalculatorParser.Func_defineContext ctx) { }
+	@Override public void exitFunc_define(BisParser.Func_defineContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMain_func(ExpCalculatorParser.Main_funcContext ctx) { }
+	@Override public void enterMain_func(BisParser.Main_funcContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMain_func(ExpCalculatorParser.Main_funcContext ctx) { }
+	@Override public void exitMain_func(BisParser.Main_funcContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc(ExpCalculatorParser.FuncContext ctx) { }
+	@Override public void enterFunc(BisParser.FuncContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc(ExpCalculatorParser.FuncContext ctx) { }
+	@Override public void exitFunc(BisParser.FuncContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParams(ExpCalculatorParser.ParamsContext ctx) { }
+	@Override public void enterParams(BisParser.ParamsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParams(ExpCalculatorParser.ParamsContext ctx) { }
+	@Override public void exitParams(BisParser.ParamsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReturn_state(ExpCalculatorParser.Return_stateContext ctx) { }
+	@Override public void enterReturn_state(BisParser.Return_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitReturn_state(ExpCalculatorParser.Return_stateContext ctx) { }
+	@Override public void exitReturn_state(BisParser.Return_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc_call_state(ExpCalculatorParser.Func_call_stateContext ctx) { }
+	@Override public void enterFunc_call_state(BisParser.Func_call_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc_call_state(ExpCalculatorParser.Func_call_stateContext ctx) { }
+	@Override public void exitFunc_call_state(BisParser.Func_call_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc_call(ExpCalculatorParser.Func_callContext ctx) { }
+	@Override public void enterFunc_call(BisParser.Func_callContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc_call(ExpCalculatorParser.Func_callContext ctx) { }
+	@Override public void exitFunc_call(BisParser.Func_callContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCall_params(ExpCalculatorParser.Call_paramsContext ctx) { }
+	@Override public void enterCall_params(BisParser.Call_paramsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCall_params(ExpCalculatorParser.Call_paramsContext ctx) { }
+	@Override public void exitCall_params(BisParser.Call_paramsContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCodeblock(ExpCalculatorParser.CodeblockContext ctx) { }
+	@Override public void enterCodeblock(BisParser.CodeblockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCodeblock(ExpCalculatorParser.CodeblockContext ctx) { }
+	@Override public void exitCodeblock(BisParser.CodeblockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterStatement(ExpCalculatorParser.StatementContext ctx) { }
+	@Override public void enterStatement(BisParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitStatement(ExpCalculatorParser.StatementContext ctx) { }
+	@Override public void exitStatement(BisParser.StatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVardec_state(ExpCalculatorParser.Vardec_stateContext ctx) { }
+	@Override public void enterVardec_state(BisParser.Vardec_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVardec_state(ExpCalculatorParser.Vardec_stateContext ctx) { }
+	@Override public void exitVardec_state(BisParser.Vardec_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConsvardec_state(ExpCalculatorParser.Consvardec_stateContext ctx) { }
+	@Override public void enterConsvardec_state(BisParser.Consvardec_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConsvardec_state(ExpCalculatorParser.Consvardec_stateContext ctx) { }
+	@Override public void exitConsvardec_state(BisParser.Consvardec_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar(ExpCalculatorParser.VarContext ctx) { }
+	@Override public void enterVar(BisParser.VarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar(ExpCalculatorParser.VarContext ctx) { }
+	@Override public void exitVar(BisParser.VarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFunc_data_type(ExpCalculatorParser.Func_data_typeContext ctx) { }
+	@Override public void enterFunc_data_type(BisParser.Func_data_typeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFunc_data_type(ExpCalculatorParser.Func_data_typeContext ctx) { }
+	@Override public void exitFunc_data_type(BisParser.Func_data_typeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterData_type(ExpCalculatorParser.Data_typeContext ctx) { }
+	@Override public void enterData_type(BisParser.Data_typeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitData_type(ExpCalculatorParser.Data_typeContext ctx) { }
+	@Override public void exitData_type(BisParser.Data_typeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterArr(ExpCalculatorParser.ArrContext ctx) { }
+	@Override public void enterArr(BisParser.ArrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitArr(ExpCalculatorParser.ArrContext ctx) { }
+	@Override public void exitArr(BisParser.ArrContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAss_state(ExpCalculatorParser.Ass_stateContext ctx) { }
+	@Override public void enterAss_state(BisParser.Ass_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAss_state(ExpCalculatorParser.Ass_stateContext ctx) { }
+	@Override public void exitAss_state(BisParser.Ass_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAssignment(ExpCalculatorParser.AssignmentContext ctx) { }
+	@Override public void enterAssignment(BisParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAssignment(ExpCalculatorParser.AssignmentContext ctx) { }
+	@Override public void exitAssignment(BisParser.AssignmentContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVal(ExpCalculatorParser.ValContext ctx) { }
+	@Override public void enterVal(BisParser.ValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVal(ExpCalculatorParser.ValContext ctx) { }
+	@Override public void exitVal(BisParser.ValContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAss_state_operator(ExpCalculatorParser.Ass_state_operatorContext ctx) { }
+	@Override public void enterAss_state_operator(BisParser.Ass_state_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAss_state_operator(ExpCalculatorParser.Ass_state_operatorContext ctx) { }
+	@Override public void exitAss_state_operator(BisParser.Ass_state_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAss_operator(ExpCalculatorParser.Ass_operatorContext ctx) { }
+	@Override public void enterAss_operator(BisParser.Ass_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAss_operator(ExpCalculatorParser.Ass_operatorContext ctx) { }
+	@Override public void exitAss_operator(BisParser.Ass_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnary_op(ExpCalculatorParser.Unary_opContext ctx) { }
+	@Override public void enterUnary_op(BisParser.Unary_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnary_op(ExpCalculatorParser.Unary_opContext ctx) { }
+	@Override public void exitUnary_op(BisParser.Unary_opContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNum_val(ExpCalculatorParser.Num_valContext ctx) { }
+	@Override public void enterNum_val(BisParser.Num_valContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNum_val(ExpCalculatorParser.Num_valContext ctx) { }
+	@Override public void exitNum_val(BisParser.Num_valContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMultOrDiv(ExpCalculatorParser.MultOrDivContext ctx) { }
+	@Override public void enterMultOrDiv(BisParser.MultOrDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMultOrDiv(ExpCalculatorParser.MultOrDivContext ctx) { }
+	@Override public void exitMultOrDiv(BisParser.MultOrDivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntLiteral(ExpCalculatorParser.IntLiteralContext ctx) { }
+	@Override public void enterIntLiteral(BisParser.IntLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitIntLiteral(ExpCalculatorParser.IntLiteralContext ctx) { }
+	@Override public void exitIntLiteral(BisParser.IntLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAddOrSubtract(ExpCalculatorParser.AddOrSubtractContext ctx) { }
+	@Override public void enterAddOrSubtract(BisParser.AddOrSubtractContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAddOrSubtract(ExpCalculatorParser.AddOrSubtractContext ctx) { }
+	@Override public void exitAddOrSubtract(BisParser.AddOrSubtractContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParenExpr(ExpCalculatorParser.ParenExprContext ctx) { }
+	@Override public void enterParenExpr(BisParser.ParenExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParenExpr(ExpCalculatorParser.ParenExprContext ctx) { }
+	@Override public void exitParenExpr(BisParser.ParenExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCond_state(ExpCalculatorParser.Cond_stateContext ctx) { }
+	@Override public void enterCond_state(BisParser.Cond_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCond_state(ExpCalculatorParser.Cond_stateContext ctx) { }
+	@Override public void exitCond_state(BisParser.Cond_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElse_block(ExpCalculatorParser.Else_blockContext ctx) { }
+	@Override public void enterElse_block(BisParser.Else_blockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElse_block(ExpCalculatorParser.Else_blockContext ctx) { }
+	@Override public void exitElse_block(BisParser.Else_blockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCond_val(ExpCalculatorParser.Cond_valContext ctx) { }
+	@Override public void enterCond_val(BisParser.Cond_valContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCond_val(ExpCalculatorParser.Cond_valContext ctx) { }
+	@Override public void exitCond_val(BisParser.Cond_valContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondition(ExpCalculatorParser.ConditionContext ctx) { }
+	@Override public void enterCondition(BisParser.ConditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondition(ExpCalculatorParser.ConditionContext ctx) { }
+	@Override public void exitCondition(BisParser.ConditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCond_operator(ExpCalculatorParser.Cond_operatorContext ctx) { }
+	@Override public void enterCond_operator(BisParser.Cond_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCond_operator(ExpCalculatorParser.Cond_operatorContext ctx) { }
+	@Override public void exitCond_operator(BisParser.Cond_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterLogical_operator(ExpCalculatorParser.Logical_operatorContext ctx) { }
+	@Override public void enterLogical_operator(BisParser.Logical_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitLogical_operator(ExpCalculatorParser.Logical_operatorContext ctx) { }
+	@Override public void exitLogical_operator(BisParser.Logical_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterWhile_state(ExpCalculatorParser.While_stateContext ctx) { }
+	@Override public void enterWhile_state(BisParser.While_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitWhile_state(ExpCalculatorParser.While_stateContext ctx) { }
+	@Override public void exitWhile_state(BisParser.While_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDo_while_state(ExpCalculatorParser.Do_while_stateContext ctx) { }
+	@Override public void enterDo_while_state(BisParser.Do_while_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDo_while_state(ExpCalculatorParser.Do_while_stateContext ctx) { }
+	@Override public void exitDo_while_state(BisParser.Do_while_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFor_state(ExpCalculatorParser.For_stateContext ctx) { }
+	@Override public void enterFor_state(BisParser.For_stateContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFor_state(ExpCalculatorParser.For_stateContext ctx) { }
+	@Override public void exitFor_state(BisParser.For_stateContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

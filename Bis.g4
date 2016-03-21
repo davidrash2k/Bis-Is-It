@@ -1,5 +1,5 @@
 // MidtermActivity Yo
-grammar ExpCalculator;
+grammar Bis;
 
 //Parser
 

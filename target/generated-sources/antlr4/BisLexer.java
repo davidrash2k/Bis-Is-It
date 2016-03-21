@@ -1,4 +1,4 @@
-// Generated from ExpCalculator.g4 by ANTLR 4.5.2
+// Generated from Bis.g4 by ANTLR 4.5.2
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;
@@ -9,7 +9,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class ExpCalculatorLexer extends Lexer {
+public class BisLexer extends Lexer {
 	static { RuntimeMetaData.checkVersion("4.5.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -104,13 +104,13 @@ public class ExpCalculatorLexer extends Lexer {
 	}
 
 
-	public ExpCalculatorLexer(CharStream input) {
+	public BisLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "ExpCalculator.g4"; }
+	public String getGrammarFileName() { return "Bis.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }

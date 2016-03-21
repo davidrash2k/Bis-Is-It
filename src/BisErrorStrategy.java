@@ -1,7 +1,7 @@
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.IntervalSet;
 
-public class ExpErrorStrategy extends DefaultErrorStrategy {
+public class BisErrorStrategy extends DefaultErrorStrategy {
 	
 	public void recover(Parser recognizer, RecognitionException e) {
         
@@ -10,7 +10,7 @@ public class ExpErrorStrategy extends DefaultErrorStrategy {
         CommonTokenStream tokenStream = (CommonTokenStream)recognizer.getInputStream();
 
         
-        if (tokenStream.LA(1) == ExpCalculatorParser.RULE_statement)
+        if (tokenStream.LA(1) == BisParser.RULE_statement)
         {
             // Get the next possible tokens
             IntervalSet intervalSet = getErrorRecoverySet(recognizer);

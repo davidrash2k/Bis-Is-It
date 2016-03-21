@@ -1,4 +1,4 @@
-// Generated from ExpCalculator.g4 by ANTLR 4.5.2
+// Generated from Bis.g4 by ANTLR 4.5.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -9,7 +9,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class ExpCalculatorParser extends Parser {
+public class BisParser extends Parser {
 	static { RuntimeMetaData.checkVersion("4.5.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
@@ -105,7 +105,7 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	@Override
-	public String getGrammarFileName() { return "ExpCalculator.g4"; }
+	public String getGrammarFileName() { return "Bis.g4"; }
 
 	@Override
 	public String[] getRuleNames() { return ruleNames; }
@@ -116,7 +116,7 @@ public class ExpCalculatorParser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public ExpCalculatorParser(TokenStream input) {
+	public BisParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -127,22 +127,22 @@ public class ExpCalculatorParser extends Parser {
 		public Main_funcContext main_func() {
 			return getRuleContext(Main_funcContext.class,0);
 		}
-		public TerminalNode EOF() { return getToken(ExpCalculatorParser.EOF, 0); }
+		public TerminalNode EOF() { return getToken(BisParser.EOF, 0); }
 		public StartContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_start; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterStart(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterStart(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitStart(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitStart(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitStart(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitStart(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -185,15 +185,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_func_define; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterFunc_define(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterFunc_define(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitFunc_define(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitFunc_define(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitFunc_define(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitFunc_define(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -233,28 +233,28 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Main_funcContext extends ParserRuleContext {
-		public TerminalNode MAIN_FUNC() { return getToken(ExpCalculatorParser.MAIN_FUNC, 0); }
-		public TerminalNode FUNC_DEFINITION() { return getToken(ExpCalculatorParser.FUNC_DEFINITION, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode MAIN_FUNC() { return getToken(BisParser.MAIN_FUNC, 0); }
+		public TerminalNode FUNC_DEFINITION() { return getToken(BisParser.FUNC_DEFINITION, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
 		public Main_funcContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_main_func; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterMain_func(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterMain_func(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitMain_func(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitMain_func(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitMain_func(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitMain_func(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -292,17 +292,17 @@ public class ExpCalculatorParser extends Parser {
 		public Func_data_typeContext func_data_type() {
 			return getRuleContext(Func_data_typeContext.class,0);
 		}
-		public TerminalNode FUNC_IDENTIFIER() { return getToken(ExpCalculatorParser.FUNC_IDENTIFIER, 0); }
-		public TerminalNode PARAMS_KEYWORD() { return getToken(ExpCalculatorParser.PARAMS_KEYWORD, 0); }
+		public TerminalNode FUNC_IDENTIFIER() { return getToken(BisParser.FUNC_IDENTIFIER, 0); }
+		public TerminalNode PARAMS_KEYWORD() { return getToken(BisParser.PARAMS_KEYWORD, 0); }
 		public ParamsContext params() {
 			return getRuleContext(ParamsContext.class,0);
 		}
-		public TerminalNode FUNC_DEFINITION() { return getToken(ExpCalculatorParser.FUNC_DEFINITION, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode FUNC_DEFINITION() { return getToken(BisParser.FUNC_DEFINITION, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
 		public Return_stateContext return_state() {
 			return getRuleContext(Return_stateContext.class,0);
 		}
@@ -312,15 +312,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_func; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterFunc(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterFunc(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitFunc(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitFunc(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitFunc(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitFunc(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -374,10 +374,10 @@ public class ExpCalculatorParser extends Parser {
 		public Data_typeContext data_type() {
 			return getRuleContext(Data_typeContext.class,0);
 		}
-		public TerminalNode VAR_IDENTIFIER() { return getToken(ExpCalculatorParser.VAR_IDENTIFIER, 0); }
-		public List<TerminalNode> COMMA() { return getTokens(ExpCalculatorParser.COMMA); }
+		public TerminalNode VAR_IDENTIFIER() { return getToken(BisParser.VAR_IDENTIFIER, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(BisParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(ExpCalculatorParser.COMMA, i);
+			return getToken(BisParser.COMMA, i);
 		}
 		public List<ParamsContext> params() {
 			return getRuleContexts(ParamsContext.class);
@@ -391,15 +391,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterParams(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterParams(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitParams(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitParams(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitParams(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitParams(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -447,26 +447,26 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Return_stateContext extends ParserRuleContext {
-		public TerminalNode RETURN() { return getToken(ExpCalculatorParser.RETURN, 0); }
+		public TerminalNode RETURN() { return getToken(BisParser.RETURN, 0); }
 		public ValContext val() {
 			return getRuleContext(ValContext.class,0);
 		}
-		public TerminalNode TERMINATOR() { return getToken(ExpCalculatorParser.TERMINATOR, 0); }
+		public TerminalNode TERMINATOR() { return getToken(BisParser.TERMINATOR, 0); }
 		public Return_stateContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_return_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterReturn_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterReturn_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitReturn_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitReturn_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitReturn_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitReturn_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -500,22 +500,22 @@ public class ExpCalculatorParser extends Parser {
 		public Func_callContext func_call() {
 			return getRuleContext(Func_callContext.class,0);
 		}
-		public TerminalNode TERMINATOR() { return getToken(ExpCalculatorParser.TERMINATOR, 0); }
+		public TerminalNode TERMINATOR() { return getToken(BisParser.TERMINATOR, 0); }
 		public Func_call_stateContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_func_call_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterFunc_call_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterFunc_call_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitFunc_call_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitFunc_call_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitFunc_call_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitFunc_call_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -544,10 +544,10 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Func_callContext extends ParserRuleContext {
-		public TerminalNode FUNC_CALL() { return getToken(ExpCalculatorParser.FUNC_CALL, 0); }
-		public TerminalNode FUNC_IDENTIFIER() { return getToken(ExpCalculatorParser.FUNC_IDENTIFIER, 0); }
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
+		public TerminalNode FUNC_CALL() { return getToken(BisParser.FUNC_CALL, 0); }
+		public TerminalNode FUNC_IDENTIFIER() { return getToken(BisParser.FUNC_IDENTIFIER, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
 		public Call_paramsContext call_params() {
 			return getRuleContext(Call_paramsContext.class,0);
 		}
@@ -557,15 +557,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_func_call; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterFunc_call(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterFunc_call(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitFunc_call(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitFunc_call(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitFunc_call(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitFunc_call(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -611,9 +611,9 @@ public class ExpCalculatorParser extends Parser {
 		public ValContext val() {
 			return getRuleContext(ValContext.class,0);
 		}
-		public List<TerminalNode> COMMA() { return getTokens(ExpCalculatorParser.COMMA); }
+		public List<TerminalNode> COMMA() { return getTokens(BisParser.COMMA); }
 		public TerminalNode COMMA(int i) {
-			return getToken(ExpCalculatorParser.COMMA, i);
+			return getToken(BisParser.COMMA, i);
 		}
 		public List<Call_paramsContext> call_params() {
 			return getRuleContexts(Call_paramsContext.class);
@@ -627,15 +627,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_call_params; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterCall_params(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterCall_params(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitCall_params(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitCall_params(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitCall_params(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitCall_params(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -693,15 +693,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_codeblock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterCodeblock(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterCodeblock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitCodeblock(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitCodeblock(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitCodeblock(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitCodeblock(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -768,15 +768,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_statement; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterStatement(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterStatement(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitStatement(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitStatement(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitStatement(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitStatement(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -862,7 +862,7 @@ public class ExpCalculatorParser extends Parser {
 		public VarContext var() {
 			return getRuleContext(VarContext.class,0);
 		}
-		public TerminalNode TERMINATOR() { return getToken(ExpCalculatorParser.TERMINATOR, 0); }
+		public TerminalNode TERMINATOR() { return getToken(BisParser.TERMINATOR, 0); }
 		public ArrContext arr() {
 			return getRuleContext(ArrContext.class,0);
 		}
@@ -872,15 +872,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_vardec_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterVardec_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterVardec_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitVardec_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitVardec_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitVardec_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitVardec_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -921,12 +921,12 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Consvardec_stateContext extends ParserRuleContext {
-		public TerminalNode CONSTANT() { return getToken(ExpCalculatorParser.CONSTANT, 0); }
-		public TerminalNode VAR_IDENTIFIER() { return getToken(ExpCalculatorParser.VAR_IDENTIFIER, 0); }
+		public TerminalNode CONSTANT() { return getToken(BisParser.CONSTANT, 0); }
+		public TerminalNode VAR_IDENTIFIER() { return getToken(BisParser.VAR_IDENTIFIER, 0); }
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
-		public TerminalNode TERMINATOR() { return getToken(ExpCalculatorParser.TERMINATOR, 0); }
+		public TerminalNode TERMINATOR() { return getToken(BisParser.TERMINATOR, 0); }
 		public ArrContext arr() {
 			return getRuleContext(ArrContext.class,0);
 		}
@@ -936,15 +936,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_consvardec_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterConsvardec_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterConsvardec_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitConsvardec_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitConsvardec_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitConsvardec_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitConsvardec_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -987,7 +987,7 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class VarContext extends ParserRuleContext {
-		public TerminalNode VAR_IDENTIFIER() { return getToken(ExpCalculatorParser.VAR_IDENTIFIER, 0); }
+		public TerminalNode VAR_IDENTIFIER() { return getToken(BisParser.VAR_IDENTIFIER, 0); }
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
@@ -997,22 +997,22 @@ public class ExpCalculatorParser extends Parser {
 		public VarContext var(int i) {
 			return getRuleContext(VarContext.class,i);
 		}
-		public TerminalNode COMMA() { return getToken(ExpCalculatorParser.COMMA, 0); }
+		public TerminalNode COMMA() { return getToken(BisParser.COMMA, 0); }
 		public VarContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_var; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterVar(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterVar(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitVar(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitVar(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitVar(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitVar(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1088,22 +1088,22 @@ public class ExpCalculatorParser extends Parser {
 		public Data_typeContext data_type() {
 			return getRuleContext(Data_typeContext.class,0);
 		}
-		public TerminalNode VOID_TYPE() { return getToken(ExpCalculatorParser.VOID_TYPE, 0); }
+		public TerminalNode VOID_TYPE() { return getToken(BisParser.VOID_TYPE, 0); }
 		public Func_data_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_func_data_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterFunc_data_type(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterFunc_data_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitFunc_data_type(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitFunc_data_type(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitFunc_data_type(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitFunc_data_type(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1148,26 +1148,26 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Data_typeContext extends ParserRuleContext {
-		public TerminalNode INT_TYPE() { return getToken(ExpCalculatorParser.INT_TYPE, 0); }
-		public TerminalNode FLOAT_TYPE() { return getToken(ExpCalculatorParser.FLOAT_TYPE, 0); }
-		public TerminalNode STRING_TYPE() { return getToken(ExpCalculatorParser.STRING_TYPE, 0); }
-		public TerminalNode CHAR_TYPE() { return getToken(ExpCalculatorParser.CHAR_TYPE, 0); }
-		public TerminalNode BOOLEAN_TYPE() { return getToken(ExpCalculatorParser.BOOLEAN_TYPE, 0); }
+		public TerminalNode INT_TYPE() { return getToken(BisParser.INT_TYPE, 0); }
+		public TerminalNode FLOAT_TYPE() { return getToken(BisParser.FLOAT_TYPE, 0); }
+		public TerminalNode STRING_TYPE() { return getToken(BisParser.STRING_TYPE, 0); }
+		public TerminalNode CHAR_TYPE() { return getToken(BisParser.CHAR_TYPE, 0); }
+		public TerminalNode BOOLEAN_TYPE() { return getToken(BisParser.BOOLEAN_TYPE, 0); }
 		public Data_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_data_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterData_type(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterData_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitData_type(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitData_type(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitData_type(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitData_type(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1200,26 +1200,26 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class ArrContext extends ParserRuleContext {
-		public List<TerminalNode> ARRAY_DELIM() { return getTokens(ExpCalculatorParser.ARRAY_DELIM); }
+		public List<TerminalNode> ARRAY_DELIM() { return getTokens(BisParser.ARRAY_DELIM); }
 		public TerminalNode ARRAY_DELIM(int i) {
-			return getToken(ExpCalculatorParser.ARRAY_DELIM, i);
+			return getToken(BisParser.ARRAY_DELIM, i);
 		}
-		public TerminalNode DIGIT() { return getToken(ExpCalculatorParser.DIGIT, 0); }
+		public TerminalNode DIGIT() { return getToken(BisParser.DIGIT, 0); }
 		public ArrContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_arr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterArr(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterArr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitArr(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitArr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitArr(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitArr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1250,11 +1250,11 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Ass_stateContext extends ParserRuleContext {
-		public TerminalNode VAR_IDENTIFIER() { return getToken(ExpCalculatorParser.VAR_IDENTIFIER, 0); }
+		public TerminalNode VAR_IDENTIFIER() { return getToken(BisParser.VAR_IDENTIFIER, 0); }
 		public AssignmentContext assignment() {
 			return getRuleContext(AssignmentContext.class,0);
 		}
-		public TerminalNode TERMINATOR() { return getToken(ExpCalculatorParser.TERMINATOR, 0); }
+		public TerminalNode TERMINATOR() { return getToken(BisParser.TERMINATOR, 0); }
 		public ArrContext arr() {
 			return getRuleContext(ArrContext.class,0);
 		}
@@ -1267,15 +1267,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ass_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterAss_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterAss_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitAss_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitAss_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitAss_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitAss_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1331,7 +1331,7 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class AssignmentContext extends ParserRuleContext {
-		public TerminalNode ASS_OPERATOR() { return getToken(ExpCalculatorParser.ASS_OPERATOR, 0); }
+		public TerminalNode ASS_OPERATOR() { return getToken(BisParser.ASS_OPERATOR, 0); }
 		public ValContext val() {
 			return getRuleContext(ValContext.class,0);
 		}
@@ -1341,15 +1341,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assignment; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterAssignment(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterAssignment(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitAssignment(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitAssignment(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitAssignment(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitAssignment(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1390,15 +1390,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_val; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterVal(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterVal(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitVal(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitVal(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitVal(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitVal(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1438,7 +1438,7 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Ass_state_operatorContext extends ParserRuleContext {
-		public TerminalNode VAR_IDENTIFIER() { return getToken(ExpCalculatorParser.VAR_IDENTIFIER, 0); }
+		public TerminalNode VAR_IDENTIFIER() { return getToken(BisParser.VAR_IDENTIFIER, 0); }
 		public Ass_operatorContext ass_operator() {
 			return getRuleContext(Ass_operatorContext.class,0);
 		}
@@ -1451,15 +1451,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ass_state_operator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterAss_state_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterAss_state_operator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitAss_state_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitAss_state_operator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitAss_state_operator(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitAss_state_operator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1498,23 +1498,23 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Ass_operatorContext extends ParserRuleContext {
-		public TerminalNode INCREMENT_OPERATOR() { return getToken(ExpCalculatorParser.INCREMENT_OPERATOR, 0); }
-		public TerminalNode DECREMENT_OPERATOR() { return getToken(ExpCalculatorParser.DECREMENT_OPERATOR, 0); }
+		public TerminalNode INCREMENT_OPERATOR() { return getToken(BisParser.INCREMENT_OPERATOR, 0); }
+		public TerminalNode DECREMENT_OPERATOR() { return getToken(BisParser.DECREMENT_OPERATOR, 0); }
 		public Ass_operatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_ass_operator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterAss_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterAss_operator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitAss_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitAss_operator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitAss_operator(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitAss_operator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1553,15 +1553,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_unary_op; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterUnary_op(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterUnary_op(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitUnary_op(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitUnary_op(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitUnary_op(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitUnary_op(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1594,32 +1594,32 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Num_valContext extends ParserRuleContext {
-		public TerminalNode DIGIT() { return getToken(ExpCalculatorParser.DIGIT, 0); }
+		public TerminalNode DIGIT() { return getToken(BisParser.DIGIT, 0); }
 		public Unary_opContext unary_op() {
 			return getRuleContext(Unary_opContext.class,0);
 		}
-		public TerminalNode EXPONENT() { return getToken(ExpCalculatorParser.EXPONENT, 0); }
-		public TerminalNode FLOAT() { return getToken(ExpCalculatorParser.FLOAT, 0); }
-		public TerminalNode CHAR() { return getToken(ExpCalculatorParser.CHAR, 0); }
+		public TerminalNode EXPONENT() { return getToken(BisParser.EXPONENT, 0); }
+		public TerminalNode FLOAT() { return getToken(BisParser.FLOAT, 0); }
+		public TerminalNode CHAR() { return getToken(BisParser.CHAR, 0); }
 		public Func_callContext func_call() {
 			return getRuleContext(Func_callContext.class,0);
 		}
-		public TerminalNode VAR_IDENTIFIER() { return getToken(ExpCalculatorParser.VAR_IDENTIFIER, 0); }
+		public TerminalNode VAR_IDENTIFIER() { return getToken(BisParser.VAR_IDENTIFIER, 0); }
 		public Num_valContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_num_val; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterNum_val(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterNum_val(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitNum_val(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitNum_val(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitNum_val(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitNum_val(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1736,21 +1736,21 @@ public class ExpCalculatorParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode MULTIPLY_OPERATOR() { return getToken(ExpCalculatorParser.MULTIPLY_OPERATOR, 0); }
-		public TerminalNode DIVIDE_OPERATOR() { return getToken(ExpCalculatorParser.DIVIDE_OPERATOR, 0); }
-		public TerminalNode MODULO_OPERATOR() { return getToken(ExpCalculatorParser.MODULO_OPERATOR, 0); }
+		public TerminalNode MULTIPLY_OPERATOR() { return getToken(BisParser.MULTIPLY_OPERATOR, 0); }
+		public TerminalNode DIVIDE_OPERATOR() { return getToken(BisParser.DIVIDE_OPERATOR, 0); }
+		public TerminalNode MODULO_OPERATOR() { return getToken(BisParser.MODULO_OPERATOR, 0); }
 		public MultOrDivContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterMultOrDiv(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterMultOrDiv(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitMultOrDiv(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitMultOrDiv(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitMultOrDiv(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitMultOrDiv(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1761,15 +1761,15 @@ public class ExpCalculatorParser extends Parser {
 		public IntLiteralContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterIntLiteral(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterIntLiteral(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitIntLiteral(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitIntLiteral(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitIntLiteral(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitIntLiteral(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1780,41 +1780,41 @@ public class ExpCalculatorParser extends Parser {
 		public ExprContext expr(int i) {
 			return getRuleContext(ExprContext.class,i);
 		}
-		public TerminalNode ADD_OPERATOR() { return getToken(ExpCalculatorParser.ADD_OPERATOR, 0); }
-		public TerminalNode SUBTRACT_OPERATOR() { return getToken(ExpCalculatorParser.SUBTRACT_OPERATOR, 0); }
+		public TerminalNode ADD_OPERATOR() { return getToken(BisParser.ADD_OPERATOR, 0); }
+		public TerminalNode SUBTRACT_OPERATOR() { return getToken(BisParser.SUBTRACT_OPERATOR, 0); }
 		public AddOrSubtractContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterAddOrSubtract(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterAddOrSubtract(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitAddOrSubtract(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitAddOrSubtract(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitAddOrSubtract(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitAddOrSubtract(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	public static class ParenExprContext extends ExprContext {
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
 		public ParenExprContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterParenExpr(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterParenExpr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitParenExpr(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitParenExpr(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitParenExpr(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitParenExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1936,18 +1936,18 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Cond_stateContext extends ParserRuleContext {
-		public TerminalNode IF_CONDITIONAL() { return getToken(ExpCalculatorParser.IF_CONDITIONAL, 0); }
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode IF_CONDITIONAL() { return getToken(BisParser.IF_CONDITIONAL, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
-		public TerminalNode THEN_CONDITIONAL() { return getToken(ExpCalculatorParser.THEN_CONDITIONAL, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
+		public TerminalNode THEN_CONDITIONAL() { return getToken(BisParser.THEN_CONDITIONAL, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
 		public Else_blockContext else_block() {
 			return getRuleContext(Else_blockContext.class,0);
 		}
@@ -1957,15 +1957,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_cond_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterCond_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterCond_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitCond_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitCond_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitCond_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitCond_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2016,37 +2016,37 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Else_blockContext extends ParserRuleContext {
-		public TerminalNode ELSE_IF_CONDITIONAL() { return getToken(ExpCalculatorParser.ELSE_IF_CONDITIONAL, 0); }
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode ELSE_IF_CONDITIONAL() { return getToken(BisParser.ELSE_IF_CONDITIONAL, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
-		public TerminalNode THEN_CONDITIONAL() { return getToken(ExpCalculatorParser.THEN_CONDITIONAL, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
+		public TerminalNode THEN_CONDITIONAL() { return getToken(BisParser.THEN_CONDITIONAL, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
 		public Else_blockContext else_block() {
 			return getRuleContext(Else_blockContext.class,0);
 		}
-		public TerminalNode ELSE_CONDITIONAL() { return getToken(ExpCalculatorParser.ELSE_CONDITIONAL, 0); }
+		public TerminalNode ELSE_CONDITIONAL() { return getToken(BisParser.ELSE_CONDITIONAL, 0); }
 		public Else_blockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_else_block; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterElse_block(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterElse_block(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitElse_block(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitElse_block(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitElse_block(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitElse_block(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2120,23 +2120,23 @@ public class ExpCalculatorParser extends Parser {
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public TerminalNode STRING() { return getToken(ExpCalculatorParser.STRING, 0); }
-		public TerminalNode BOOLEAN() { return getToken(ExpCalculatorParser.BOOLEAN, 0); }
+		public TerminalNode STRING() { return getToken(BisParser.STRING, 0); }
+		public TerminalNode BOOLEAN() { return getToken(BisParser.BOOLEAN, 0); }
 		public Cond_valContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cond_val; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterCond_val(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterCond_val(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitCond_val(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitCond_val(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitCond_val(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitCond_val(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2191,15 +2191,15 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class ConditionContext extends ParserRuleContext {
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public List<ConditionContext> condition() {
 			return getRuleContexts(ConditionContext.class);
 		}
 		public ConditionContext condition(int i) {
 			return getRuleContext(ConditionContext.class,i);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
-		public TerminalNode NOT_OPERATOR() { return getToken(ExpCalculatorParser.NOT_OPERATOR, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
+		public TerminalNode NOT_OPERATOR() { return getToken(BisParser.NOT_OPERATOR, 0); }
 		public List<Cond_valContext> cond_val() {
 			return getRuleContexts(Cond_valContext.class);
 		}
@@ -2218,15 +2218,15 @@ public class ExpCalculatorParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_condition; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterCondition(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterCondition(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitCondition(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitCondition(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitCondition(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitCondition(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2319,27 +2319,27 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Cond_operatorContext extends ParserRuleContext {
-		public TerminalNode LESS_THAN_OPERATOR() { return getToken(ExpCalculatorParser.LESS_THAN_OPERATOR, 0); }
-		public TerminalNode GREATER_THAN_OPERATOR() { return getToken(ExpCalculatorParser.GREATER_THAN_OPERATOR, 0); }
-		public TerminalNode LESS_THAN_EQUAL_TO_OPERATOR() { return getToken(ExpCalculatorParser.LESS_THAN_EQUAL_TO_OPERATOR, 0); }
-		public TerminalNode GREATER_THAN_EQUAL_TO_OPERATOR() { return getToken(ExpCalculatorParser.GREATER_THAN_EQUAL_TO_OPERATOR, 0); }
-		public TerminalNode EQUAL_TO_OPERATOR() { return getToken(ExpCalculatorParser.EQUAL_TO_OPERATOR, 0); }
-		public TerminalNode NOT_EQUAL_TO_OPERATOR() { return getToken(ExpCalculatorParser.NOT_EQUAL_TO_OPERATOR, 0); }
+		public TerminalNode LESS_THAN_OPERATOR() { return getToken(BisParser.LESS_THAN_OPERATOR, 0); }
+		public TerminalNode GREATER_THAN_OPERATOR() { return getToken(BisParser.GREATER_THAN_OPERATOR, 0); }
+		public TerminalNode LESS_THAN_EQUAL_TO_OPERATOR() { return getToken(BisParser.LESS_THAN_EQUAL_TO_OPERATOR, 0); }
+		public TerminalNode GREATER_THAN_EQUAL_TO_OPERATOR() { return getToken(BisParser.GREATER_THAN_EQUAL_TO_OPERATOR, 0); }
+		public TerminalNode EQUAL_TO_OPERATOR() { return getToken(BisParser.EQUAL_TO_OPERATOR, 0); }
+		public TerminalNode NOT_EQUAL_TO_OPERATOR() { return getToken(BisParser.NOT_EQUAL_TO_OPERATOR, 0); }
 		public Cond_operatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_cond_operator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterCond_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterCond_operator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitCond_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitCond_operator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitCond_operator(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitCond_operator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2372,23 +2372,23 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Logical_operatorContext extends ParserRuleContext {
-		public TerminalNode AND_OPERATOR() { return getToken(ExpCalculatorParser.AND_OPERATOR, 0); }
-		public TerminalNode OR_OPERATOR() { return getToken(ExpCalculatorParser.OR_OPERATOR, 0); }
+		public TerminalNode AND_OPERATOR() { return getToken(BisParser.AND_OPERATOR, 0); }
+		public TerminalNode OR_OPERATOR() { return getToken(BisParser.OR_OPERATOR, 0); }
 		public Logical_operatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_logical_operator; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterLogical_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterLogical_operator(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitLogical_operator(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitLogical_operator(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitLogical_operator(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitLogical_operator(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2421,32 +2421,32 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class While_stateContext extends ParserRuleContext {
-		public TerminalNode WHILE_LOOP() { return getToken(ExpCalculatorParser.WHILE_LOOP, 0); }
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode WHILE_LOOP() { return getToken(BisParser.WHILE_LOOP, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
 		public While_stateContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_while_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterWhile_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterWhile_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitWhile_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitWhile_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitWhile_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitWhile_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2485,33 +2485,33 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class Do_while_stateContext extends ParserRuleContext {
-		public TerminalNode DO_WHILE_LOOP() { return getToken(ExpCalculatorParser.DO_WHILE_LOOP, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode DO_WHILE_LOOP() { return getToken(BisParser.DO_WHILE_LOOP, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
-		public TerminalNode WHILE_LOOP() { return getToken(ExpCalculatorParser.WHILE_LOOP, 0); }
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
+		public TerminalNode WHILE_LOOP() { return getToken(BisParser.WHILE_LOOP, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
 		public Do_while_stateContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_do_while_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterDo_while_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterDo_while_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitDo_while_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitDo_while_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitDo_while_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitDo_while_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2552,39 +2552,39 @@ public class ExpCalculatorParser extends Parser {
 	}
 
 	public static class For_stateContext extends ParserRuleContext {
-		public TerminalNode FOR_LOOP() { return getToken(ExpCalculatorParser.FOR_LOOP, 0); }
-		public TerminalNode OPEN_PAR() { return getToken(ExpCalculatorParser.OPEN_PAR, 0); }
+		public TerminalNode FOR_LOOP() { return getToken(BisParser.FOR_LOOP, 0); }
+		public TerminalNode OPEN_PAR() { return getToken(BisParser.OPEN_PAR, 0); }
 		public Ass_stateContext ass_state() {
 			return getRuleContext(Ass_stateContext.class,0);
 		}
 		public ConditionContext condition() {
 			return getRuleContext(ConditionContext.class,0);
 		}
-		public TerminalNode TERMINATOR() { return getToken(ExpCalculatorParser.TERMINATOR, 0); }
+		public TerminalNode TERMINATOR() { return getToken(BisParser.TERMINATOR, 0); }
 		public Ass_state_operatorContext ass_state_operator() {
 			return getRuleContext(Ass_state_operatorContext.class,0);
 		}
-		public TerminalNode CLOSE_PAR() { return getToken(ExpCalculatorParser.CLOSE_PAR, 0); }
-		public TerminalNode OPEN_BRE() { return getToken(ExpCalculatorParser.OPEN_BRE, 0); }
+		public TerminalNode CLOSE_PAR() { return getToken(BisParser.CLOSE_PAR, 0); }
+		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
 		public CodeblockContext codeblock() {
 			return getRuleContext(CodeblockContext.class,0);
 		}
-		public TerminalNode CLOSE_BRE() { return getToken(ExpCalculatorParser.CLOSE_BRE, 0); }
+		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
 		public For_stateContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_for_state; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).enterFor_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterFor_state(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof ExpCalculatorListener ) ((ExpCalculatorListener)listener).exitFor_state(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitFor_state(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof ExpCalculatorVisitor ) return ((ExpCalculatorVisitor<? extends T>)visitor).visitFor_state(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitFor_state(this);
 			else return visitor.visitChildren(this);
 		}
 	}
