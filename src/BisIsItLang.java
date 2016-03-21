@@ -51,7 +51,7 @@ public class BisIsItLang
         JPanel panel = new JPanel();
         TreeViewer viewer = new TreeViewer(Arrays.asList(
                 parser.getRuleNames()),tree);
-        viewer.setScale(1);//scale a little
+        viewer.setScale(1.5);//scale a little
         panel.add(viewer);
         
         JSlider scaleSlider = new JSlider(JSlider.HORIZONTAL, 5, 40, 15);
