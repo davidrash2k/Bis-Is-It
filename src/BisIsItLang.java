@@ -2,9 +2,13 @@ import java.awt.BorderLayout;
 import java.io.IOException;
 import java.util.Arrays;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRFileStream;
@@ -42,14 +46,31 @@ public class BisIsItLang
         System.out.println(tree.toStringTree(parser));
 
         //show AST in GUI
-        JFrame frame = new JFrame("Antlr AST");
+        JFrame frame = new JFrame("I think I shall never see");
+        //frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.PAGE_AXIS));
         JPanel panel = new JPanel();
         TreeViewer viewer = new TreeViewer(Arrays.asList(
                 parser.getRuleNames()),tree);
-        viewer.setScale(1.5);//scale a little
+        viewer.setScale(1);//scale a little
         panel.add(viewer);
-
         
+        JSlider scaleSlider = new JSlider(JSlider.HORIZONTAL, 5, 40, 15);
+        scaleSlider.addChangeListener(new ChangeListener() {
+
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				JSlider source = (JSlider)e.getSource();
+				if (!source.getValueIsAdjusting()) {
+		            int scale = (int)source.getValue();
+		            panel.removeAll();
+		            viewer.setScale(scale/10.0);
+		            panel.add(viewer);
+		            frame.revalidate();
+		        }
+			}
+        });
+        
+        frame.add(scaleSlider, BorderLayout.NORTH);
         frame.add(panel);
         frame.add(new JScrollPane(panel), BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
