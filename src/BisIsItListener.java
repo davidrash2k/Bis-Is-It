@@ -47,7 +47,7 @@ public class BisIsItListener implements BisListener {
 			
 		}
 		stack = new Stack<Integer>();
-		error = false;
+		error = false; 
 	}
 	/**
 	 * {@inheritDoc}
