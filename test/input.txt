@@ -1,9 +1,16 @@
-1+2*3
-2
-6%2
-5 + 7
-10-( 3 * 7 + 2 * 6 )
--1*9
--2* -3
-10 / 3
-1+2+((((4+4))))
+lutaw func.addNumbers >> lutaw _uno, lutaw _dos >>>
+{
+
+ibalik _uno + _dos ;
+
+}
+
+sugod_diri >>>
+{
+numero _ab;
+_ab = (2+3);
+}
+
+
+
+

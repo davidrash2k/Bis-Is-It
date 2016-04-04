@@ -3,16 +3,21 @@ grammar Bis;
 
 //Parser
 
+/* Type checking */
+
+
+
+
 /* Production Rule */
 start
-	: func_define main_func EOF;
+	: func_define main_func  EOF;
 	
 func_define
 	: (func)*;
 
 /* Main Function */
 main_func
-	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE ;
+	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE #main_Func ;
 
 /* Defining a Function */
 func 

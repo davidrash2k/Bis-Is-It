@@ -23,11 +23,12 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunc_define(BisParser.Func_defineContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#main_func}.
+	 * Visit a parse tree produced by the {@code main_Func}
+	 * labeled alternative in {@link BisParser#main_func}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMain_func(BisParser.Main_funcContext ctx);
+	T visitMain_Func(BisParser.Main_FuncContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#func}.
 	 * @param ctx the parse tree

@@ -28,15 +28,17 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitFunc_define(BisParser.Func_defineContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#main_func}.
+	 * Enter a parse tree produced by the {@code main_Func}
+	 * labeled alternative in {@link BisParser#main_func}.
 	 * @param ctx the parse tree
 	 */
-	void enterMain_func(BisParser.Main_funcContext ctx);
+	void enterMain_Func(BisParser.Main_FuncContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#main_func}.
+	 * Exit a parse tree produced by the {@code main_Func}
+	 * labeled alternative in {@link BisParser#main_func}.
 	 * @param ctx the parse tree
 	 */
-	void exitMain_func(BisParser.Main_funcContext ctx);
+	void exitMain_Func(BisParser.Main_FuncContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#func}.
 	 * @param ctx the parse tree

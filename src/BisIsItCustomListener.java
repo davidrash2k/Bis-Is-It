@@ -30,6 +30,7 @@ import bis.is.it.BisParser.Func_call_stateContext;
 import bis.is.it.BisParser.Func_data_typeContext;
 import bis.is.it.BisParser.Func_defineContext;
 import bis.is.it.BisParser.IntLiteralContext;
+import bis.is.it.BisParser.Main_FuncContext;
 import bis.is.it.BisParser.Main_funcContext;
 import bis.is.it.BisParser.MultOrDivContext;
 import bis.is.it.BisParser.Num_valContext;
@@ -92,18 +93,6 @@ public class BisIsItCustomListener implements BisListener {
 
 	@Override
 	public void exitFunc_define(Func_defineContext ctx) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void enterMain_func(Main_funcContext ctx) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void exitMain_func(Main_funcContext ctx) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -518,6 +507,18 @@ public class BisIsItCustomListener implements BisListener {
 	
 	public void notifyError(String errorMsg) {
 		error = true;
+	}
+
+	@Override
+	public void enterMain_Func(Main_FuncContext ctx) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exitMain_Func(Main_FuncContext ctx) {
+		// TODO Auto-generated method stub
+		
 	}
 
 

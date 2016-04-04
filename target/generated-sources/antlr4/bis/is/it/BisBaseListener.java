@@ -40,13 +40,13 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMain_func(BisParser.Main_funcContext ctx) { }
+	@Override public void enterMain_Func(BisParser.Main_FuncContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMain_func(BisParser.Main_funcContext ctx) { }
+	@Override public void exitMain_Func(BisParser.Main_FuncContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

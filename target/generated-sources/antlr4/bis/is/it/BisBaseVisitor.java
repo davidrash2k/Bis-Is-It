@@ -31,7 +31,7 @@ public class BisBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Bi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitMain_func(BisParser.Main_funcContext ctx) { return visitChildren(ctx); }
+	@Override public T visitMain_Func(BisParser.Main_FuncContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

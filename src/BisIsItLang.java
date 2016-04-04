@@ -10,13 +10,16 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.v4.gui.TreeViewer;
 import org.antlr.v4.runtime.ANTLRFileStream;
+import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import bis.is.it.BisLexer;
 import bis.is.it.BisParser;
+
  
 public class BisIsItLang
 {
@@ -27,7 +30,16 @@ public class BisIsItLang
      */
     public static void main(String[] args) throws IOException
     {
-    	String filename = "test\\test1.txt";
+    	String filename = "test\\input.txt";
+    	
+    	
+    	BisLexer lexer2 = new BisLexer ( new ANTLRFileStream(filename));
+    	BisParser parser2 = new BisParser(new CommonTokenStream(lexer2));
+    	    parser2.start();
+    	
+    	
+    	
+    	
     	BisIsItCustomListener parseListener = new BisIsItCustomListener();
     	BisLexer lexer = new BisLexer(new ANTLRFileStream(filename));
         lexer.removeErrorListeners();
@@ -42,8 +54,21 @@ public class BisIsItLang
         parser.addParseListener(parseListener);
         ParseTree tree = parser.start();
         
+        
+        BisBaseVisitorImplementer visitorImplementer = new BisBaseVisitorImplementer();
+        
+        //TYPE CHECKING
+        visitorImplementer.visit(tree);
+        
+        if(!visitorImplementer.getHasError()){
+        	//execute code
+        }else{
+        	//do something
+        }
+        
+        
         //show AST in console
-        System.out.println(tree.toStringTree(parser));
+        //System.out.println(tree.toStringTree(parser));
 
         //show AST in GUI
         JFrame frame = new JFrame("I think I shall never see");

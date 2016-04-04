@@ -234,6 +234,17 @@ public class BisParser extends Parser {
 	}
 
 	public static class Main_funcContext extends ParserRuleContext {
+		public Main_funcContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_main_func; }
+	 
+		public Main_funcContext() { }
+		public void copyFrom(Main_funcContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class Main_FuncContext extends Main_funcContext {
 		public TerminalNode MAIN_FUNC() { return getToken(BisParser.MAIN_FUNC, 0); }
 		public TerminalNode FUNC_DEFINITION() { return getToken(BisParser.FUNC_DEFINITION, 0); }
 		public TerminalNode OPEN_BRE() { return getToken(BisParser.OPEN_BRE, 0); }
@@ -241,21 +252,18 @@ public class BisParser extends Parser {
 			return getRuleContext(CodeblockContext.class,0);
 		}
 		public TerminalNode CLOSE_BRE() { return getToken(BisParser.CLOSE_BRE, 0); }
-		public Main_funcContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_main_func; }
+		public Main_FuncContext(Main_funcContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof BisListener ) ((BisListener)listener).enterMain_func(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).enterMain_Func(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof BisListener ) ((BisListener)listener).exitMain_func(this);
+			if ( listener instanceof BisListener ) ((BisListener)listener).exitMain_Func(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitMain_func(this);
+			if ( visitor instanceof BisVisitor ) return ((BisVisitor<? extends T>)visitor).visitMain_Func(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -264,6 +272,7 @@ public class BisParser extends Parser {
 		Main_funcContext _localctx = new Main_funcContext(_ctx, getState());
 		enterRule(_localctx, 4, RULE_main_func);
 		try {
+			_localctx = new Main_FuncContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(78);
