@@ -23,12 +23,12 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunc_define(BisParser.Func_defineContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code main_Func}
+	 * Visit a parse tree produced by the {@code mainFunc}
 	 * labeled alternative in {@link BisParser#main_func}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitMain_Func(BisParser.Main_FuncContext ctx);
+	T visitMainFunc(BisParser.MainFuncContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#func}.
 	 * @param ctx the parse tree
@@ -90,11 +90,26 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitConsvardec_state(BisParser.Consvardec_stateContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#var}.
+	 * Visit a parse tree produced by the {@code multipleVar}
+	 * labeled alternative in {@link BisParser#vardec}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVar(BisParser.VarContext ctx);
+	T visitMultipleVar(BisParser.MultipleVarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code singleVar}
+	 * labeled alternative in {@link BisParser#vardec}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSingleVar(BisParser.SingleVarContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code arrayVar}
+	 * labeled alternative in {@link BisParser#vardec}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayVar(BisParser.ArrayVarContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#func_data_type}.
 	 * @param ctx the parse tree
@@ -114,11 +129,19 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArr(BisParser.ArrContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#ass_state}.
+	 * Visit a parse tree produced by the {@code normalAssign}
+	 * labeled alternative in {@link BisParser#ass_state}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAss_state(BisParser.Ass_stateContext ctx);
+	T visitNormalAssign(BisParser.NormalAssignContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code operatorAssign}
+	 * labeled alternative in {@link BisParser#ass_state}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOperatorAssign(BisParser.OperatorAssignContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#assignment}.
 	 * @param ctx the parse tree
@@ -150,11 +173,47 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitUnary_op(BisParser.Unary_opContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#num_val}.
+	 * Visit a parse tree produced by the {@code integerLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitNum_val(BisParser.Num_valContext ctx);
+	T visitIntegerLiteral(BisParser.IntegerLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code floatLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatLiteral(BisParser.FloatLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code charLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCharLiteral(BisParser.CharLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code functionCall}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFunctionCall(BisParser.FunctionCallContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code arrayIdentifier}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayIdentifier(BisParser.ArrayIdentifierContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code varIdentifier}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVarIdentifier(BisParser.VarIdentifierContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code multOrDiv}
 	 * labeled alternative in {@link BisParser#expr}.
@@ -163,19 +222,19 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMultOrDiv(BisParser.MultOrDivContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code intLiteral}
-	 * labeled alternative in {@link BisParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIntLiteral(BisParser.IntLiteralContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code addOrSubtract}
 	 * labeled alternative in {@link BisParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitAddOrSubtract(BisParser.AddOrSubtractContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code numberValue}
+	 * labeled alternative in {@link BisParser#expr}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumberValue(BisParser.NumberValueContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code parenExpr}
 	 * labeled alternative in {@link BisParser#expr}.
@@ -190,29 +249,74 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCond_state(BisParser.Cond_stateContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#else_if_block}.
+	 * Visit a parse tree produced by {@link BisParser#cond_block}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitElse_if_block(BisParser.Else_if_blockContext ctx);
+	T visitCond_block(BisParser.Cond_blockContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#else_block}.
+	 * Visit a parse tree produced by the {@code expression}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitElse_block(BisParser.Else_blockContext ctx);
+	T visitExpression(BisParser.ExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#cond_val}.
+	 * Visit a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCond_val(BisParser.Cond_valContext ctx);
+	T visitStringLiteral(BisParser.StringLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#condition}.
+	 * Visit a parse tree produced by the {@code stringConcatString}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCondition(BisParser.ConditionContext ctx);
+	T visitStringConcatString(BisParser.StringConcatStringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code stringConcatExpr}
+	 * labeled alternative in {@link BisParser#cond_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringConcatExpr(BisParser.StringConcatExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code booleanLiteral}
+	 * labeled alternative in {@link BisParser#cond_val}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBooleanLiteral(BisParser.BooleanLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code orCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrCondition(BisParser.OrConditionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code andCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndCondition(BisParser.AndConditionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code conditionOperator}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionOperator(BisParser.ConditionOperatorContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code parenCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParenCondition(BisParser.ParenConditionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#cond_operator}.
 	 * @param ctx the parse tree

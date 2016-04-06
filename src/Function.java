@@ -1,21 +1,23 @@
 
 import java.util.ArrayList;
 
+import org.antlr.v4.runtime.tree.ParseTree;
 
-public class Function {
-	private String  signature;
+import bis.is.it.BisParser;
+
+
+public class Function extends Symbol {
+	private String signature;
 	private String return_type;
 	private ArrayList<Variable> parameters;
+	private BisParser.FuncContext ctx;
 	
-	public Function(){
-		
-	}
-	
-	public Function(String return_type, String signature,  ArrayList<Variable> parameters) {
+	public Function(String return_type, String signature,  ArrayList<Variable> parameters, BisParser.FuncContext ctx) {
 		super();
 		this.return_type = return_type;
 		this.signature = signature;
 		this.parameters = parameters;
+		this.ctx = ctx;
 	}
 
 	public String getSignature() {
@@ -34,11 +36,13 @@ public class Function {
 	public ArrayList<Variable> getParameters() {
 		return parameters;
 	}
+	
+	
 
 	public void setParameters(ArrayList<Variable> parameters) {
 		this.parameters = parameters;
 	}
-
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

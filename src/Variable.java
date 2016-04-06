@@ -1,23 +1,16 @@
 
 
-public class Variable {
+public class Variable extends Symbol {
 	
 	private String data_type;
-	private String name;
-	private String value;
+	private Value value;
 	
-	public Variable(){
-		
-	}
-	
-	public Variable(String data_type, String name, String value) {
+	public Variable(String data_type, String name, Value value) {
 		super();
 		this.data_type = data_type;
 		this.name = name;
 		this.value = value;
 	}
-	
-	
 
 	public Variable(String data_type, String name) {
 		super();
@@ -25,40 +18,26 @@ public class Variable {
 		this.name = name;
 	}
 
-	public String getData_type() {
+	public String getDataType() {
 		return data_type;
 	}
 
-	public void setData_type(String data_type) {
+	public void setDatType(String data_type) {
 		this.data_type = data_type;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getValue() {
+	public Value getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(Value value) {
 		this.value = value;
 	}
-
+	
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return " Data Type:" + data_type + " Name:" + name + " Value:" + value;
+		return " Data Type:" + data_type + " Name:" + name + " Value:" + value.toString();
 	}
-	
-	
-	
-	
 
-	
-	
 }

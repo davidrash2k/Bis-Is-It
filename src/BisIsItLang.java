@@ -40,18 +40,18 @@ public class BisIsItLang
     	
     	
     	
-    	BisIsItCustomListener parseListener = new BisIsItCustomListener();
+    	//BisIsItCustomListener parseListener = new BisIsItCustomListener();
     	BisLexer lexer = new BisLexer(new ANTLRFileStream(filename));
-        lexer.removeErrorListeners();
-        lexer.addErrorListener(new BisLexerErrorListener(parseListener));
+        //lexer.removeErrorListeners();
+        //lexer.addErrorListener(new BisLexerErrorListener(parseListener));
     	CommonTokenStream tokens = new CommonTokenStream(lexer);
     	
         BisParser parser = new BisParser(tokens);
         parser.setBuildParseTree(true);
         //parser.setErrorHandler(new BisErrorStrategy());
-        parser.removeErrorListeners();
-        parser.addErrorListener(new BisParserErrorListener(parseListener));
-        parser.addParseListener(parseListener);
+        //parser.removeErrorListeners();
+        //parser.addErrorListener(new BisParserErrorListener(parseListener));
+        //parser.addParseListener(parseListener);
         ParseTree tree = parser.start();
         
         

@@ -28,17 +28,17 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitFunc_define(BisParser.Func_defineContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code main_Func}
+	 * Enter a parse tree produced by the {@code mainFunc}
 	 * labeled alternative in {@link BisParser#main_func}.
 	 * @param ctx the parse tree
 	 */
-	void enterMain_Func(BisParser.Main_FuncContext ctx);
+	void enterMainFunc(BisParser.MainFuncContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code main_Func}
+	 * Exit a parse tree produced by the {@code mainFunc}
 	 * labeled alternative in {@link BisParser#main_func}.
 	 * @param ctx the parse tree
 	 */
-	void exitMain_Func(BisParser.Main_FuncContext ctx);
+	void exitMainFunc(BisParser.MainFuncContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#func}.
 	 * @param ctx the parse tree
@@ -140,15 +140,41 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitConsvardec_state(BisParser.Consvardec_stateContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#var}.
+	 * Enter a parse tree produced by the {@code multipleVar}
+	 * labeled alternative in {@link BisParser#vardec}.
 	 * @param ctx the parse tree
 	 */
-	void enterVar(BisParser.VarContext ctx);
+	void enterMultipleVar(BisParser.MultipleVarContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#var}.
+	 * Exit a parse tree produced by the {@code multipleVar}
+	 * labeled alternative in {@link BisParser#vardec}.
 	 * @param ctx the parse tree
 	 */
-	void exitVar(BisParser.VarContext ctx);
+	void exitMultipleVar(BisParser.MultipleVarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code singleVar}
+	 * labeled alternative in {@link BisParser#vardec}.
+	 * @param ctx the parse tree
+	 */
+	void enterSingleVar(BisParser.SingleVarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code singleVar}
+	 * labeled alternative in {@link BisParser#vardec}.
+	 * @param ctx the parse tree
+	 */
+	void exitSingleVar(BisParser.SingleVarContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayVar}
+	 * labeled alternative in {@link BisParser#vardec}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayVar(BisParser.ArrayVarContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayVar}
+	 * labeled alternative in {@link BisParser#vardec}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayVar(BisParser.ArrayVarContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#func_data_type}.
 	 * @param ctx the parse tree
@@ -180,15 +206,29 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitArr(BisParser.ArrContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#ass_state}.
+	 * Enter a parse tree produced by the {@code normalAssign}
+	 * labeled alternative in {@link BisParser#ass_state}.
 	 * @param ctx the parse tree
 	 */
-	void enterAss_state(BisParser.Ass_stateContext ctx);
+	void enterNormalAssign(BisParser.NormalAssignContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#ass_state}.
+	 * Exit a parse tree produced by the {@code normalAssign}
+	 * labeled alternative in {@link BisParser#ass_state}.
 	 * @param ctx the parse tree
 	 */
-	void exitAss_state(BisParser.Ass_stateContext ctx);
+	void exitNormalAssign(BisParser.NormalAssignContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code operatorAssign}
+	 * labeled alternative in {@link BisParser#ass_state}.
+	 * @param ctx the parse tree
+	 */
+	void enterOperatorAssign(BisParser.OperatorAssignContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code operatorAssign}
+	 * labeled alternative in {@link BisParser#ass_state}.
+	 * @param ctx the parse tree
+	 */
+	void exitOperatorAssign(BisParser.OperatorAssignContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#assignment}.
 	 * @param ctx the parse tree
@@ -240,15 +280,77 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitUnary_op(BisParser.Unary_opContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#num_val}.
+	 * Enter a parse tree produced by the {@code integerLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
 	 * @param ctx the parse tree
 	 */
-	void enterNum_val(BisParser.Num_valContext ctx);
+	void enterIntegerLiteral(BisParser.IntegerLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#num_val}.
+	 * Exit a parse tree produced by the {@code integerLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
 	 * @param ctx the parse tree
 	 */
-	void exitNum_val(BisParser.Num_valContext ctx);
+	void exitIntegerLiteral(BisParser.IntegerLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code floatLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloatLiteral(BisParser.FloatLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code floatLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloatLiteral(BisParser.FloatLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code charLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterCharLiteral(BisParser.CharLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code charLiteral}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitCharLiteral(BisParser.CharLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code functionCall}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCall(BisParser.FunctionCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code functionCall}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCall(BisParser.FunctionCallContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code arrayIdentifier}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayIdentifier(BisParser.ArrayIdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code arrayIdentifier}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayIdentifier(BisParser.ArrayIdentifierContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code varIdentifier}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarIdentifier(BisParser.VarIdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code varIdentifier}
+	 * labeled alternative in {@link BisParser#num_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarIdentifier(BisParser.VarIdentifierContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code multOrDiv}
 	 * labeled alternative in {@link BisParser#expr}.
@@ -262,18 +364,6 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitMultOrDiv(BisParser.MultOrDivContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code intLiteral}
-	 * labeled alternative in {@link BisParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntLiteral(BisParser.IntLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code intLiteral}
-	 * labeled alternative in {@link BisParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntLiteral(BisParser.IntLiteralContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code addOrSubtract}
 	 * labeled alternative in {@link BisParser#expr}.
 	 * @param ctx the parse tree
@@ -285,6 +375,18 @@ public interface BisListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAddOrSubtract(BisParser.AddOrSubtractContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code numberValue}
+	 * labeled alternative in {@link BisParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumberValue(BisParser.NumberValueContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code numberValue}
+	 * labeled alternative in {@link BisParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumberValue(BisParser.NumberValueContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code parenExpr}
 	 * labeled alternative in {@link BisParser#expr}.
@@ -308,45 +410,123 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitCond_state(BisParser.Cond_stateContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#else_if_block}.
+	 * Enter a parse tree produced by {@link BisParser#cond_block}.
 	 * @param ctx the parse tree
 	 */
-	void enterElse_if_block(BisParser.Else_if_blockContext ctx);
+	void enterCond_block(BisParser.Cond_blockContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#else_if_block}.
+	 * Exit a parse tree produced by {@link BisParser#cond_block}.
 	 * @param ctx the parse tree
 	 */
-	void exitElse_if_block(BisParser.Else_if_blockContext ctx);
+	void exitCond_block(BisParser.Cond_blockContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#else_block}.
+	 * Enter a parse tree produced by the {@code expression}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 */
-	void enterElse_block(BisParser.Else_blockContext ctx);
+	void enterExpression(BisParser.ExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#else_block}.
+	 * Exit a parse tree produced by the {@code expression}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 */
-	void exitElse_block(BisParser.Else_blockContext ctx);
+	void exitExpression(BisParser.ExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#cond_val}.
+	 * Enter a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 */
-	void enterCond_val(BisParser.Cond_valContext ctx);
+	void enterStringLiteral(BisParser.StringLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#cond_val}.
+	 * Exit a parse tree produced by the {@code stringLiteral}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 */
-	void exitCond_val(BisParser.Cond_valContext ctx);
+	void exitStringLiteral(BisParser.StringLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#condition}.
+	 * Enter a parse tree produced by the {@code stringConcatString}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 */
-	void enterCondition(BisParser.ConditionContext ctx);
+	void enterStringConcatString(BisParser.StringConcatStringContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link BisParser#condition}.
+	 * Exit a parse tree produced by the {@code stringConcatString}
+	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
 	 */
-	void exitCondition(BisParser.ConditionContext ctx);
+	void exitStringConcatString(BisParser.StringConcatStringContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringConcatExpr}
+	 * labeled alternative in {@link BisParser#cond_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringConcatExpr(BisParser.StringConcatExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringConcatExpr}
+	 * labeled alternative in {@link BisParser#cond_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringConcatExpr(BisParser.StringConcatExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code booleanLiteral}
+	 * labeled alternative in {@link BisParser#cond_val}.
+	 * @param ctx the parse tree
+	 */
+	void enterBooleanLiteral(BisParser.BooleanLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code booleanLiteral}
+	 * labeled alternative in {@link BisParser#cond_val}.
+	 * @param ctx the parse tree
+	 */
+	void exitBooleanLiteral(BisParser.BooleanLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code orCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterOrCondition(BisParser.OrConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code orCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitOrCondition(BisParser.OrConditionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code andCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterAndCondition(BisParser.AndConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code andCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitAndCondition(BisParser.AndConditionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code conditionOperator}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditionOperator(BisParser.ConditionOperatorContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code conditionOperator}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditionOperator(BisParser.ConditionOperatorContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code parenCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterParenCondition(BisParser.ParenConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code parenCondition}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitParenCondition(BisParser.ParenConditionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#cond_operator}.
 	 * @param ctx the parse tree

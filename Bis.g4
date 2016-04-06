@@ -17,14 +17,14 @@ func_define
 
 /* Main Function */
 main_func
-	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE #main_Func ;
+	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE #mainFunc ;
 
 /* Defining a Function */
 func 
-	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD params? FUNC_DEFINITION OPEN_BRE codeblock return_state? CLOSE_BRE;
+	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD (params (COMMA params)*)? FUNC_DEFINITION OPEN_BRE codeblock return_state? CLOSE_BRE;
 	
 params
-	: data_type VAR_IDENTIFIER (COMMA params)*;
+	: data_type VAR_IDENTIFIER;
 
 return_state
 	: RETURN val TERMINATOR;
@@ -55,14 +55,15 @@ statement
 	
 /* Variable Declaration */
 vardec_state
-	: data_type arr? var TERMINATOR;
+	: vardec TERMINATOR;
 
 consvardec_state
 	: CONSTANT data_type VAR_IDENTIFIER assignment TERMINATOR;
 
-var
-	: var COMMA var 
-	| VAR_IDENTIFIER assignment?;
+vardec
+	: vardec COMMA vardec #multipleVar
+	| data_type VAR_IDENTIFIER assignment? #singleVar
+	| data_type arr VAR_IDENTIFIER #arrayVar;
 
 func_data_type
 	: data_type
@@ -80,8 +81,8 @@ arr
 	
 /* Assignment Statement */
 ass_state
-	: VAR_IDENTIFIER arr? assignment TERMINATOR
-	| ass_state_operator TERMINATOR;
+	: VAR_IDENTIFIER arr? assignment TERMINATOR #normalAssign
+	| ass_state_operator TERMINATOR #operatorAssign;
 
 assignment
 	: ASS_OPERATOR val;
@@ -107,42 +108,41 @@ unary_op
 
 //Value which can be evaluated in an expression
 num_val
-	: unary_op? DIGIT EXPONENT?
-	| unary_op? FLOAT EXPONENT?
-	| CHAR
-	| func_call 
-	| VAR_IDENTIFIER ;
+	: unary_op? DIGIT #integerLiteral
+	| unary_op? FLOAT EXPONENT? #floatLiteral
+	| CHAR #charLiteral
+	| func_call #functionCall
+	| VAR_IDENTIFIER arr #arrayIdentifier
+	| VAR_IDENTIFIER #varIdentifier;
 ////////
 
 expr                            
     : OPEN_PAR expr CLOSE_PAR              # parenExpr
     | expr (MULTIPLY_OPERATOR|DIVIDE_OPERATOR|MODULO_OPERATOR) expr   # multOrDiv
     | expr (ADD_OPERATOR|SUBTRACT_OPERATOR) expr       # addOrSubtract
-    | num_val                   # intLiteral;
+    | num_val                   # numberValue;
 
 /* Conditional Statement */
 cond_state
-	: IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE  else_if_block* else_block?;
+	: IF_CONDITIONAL cond_block (ELSE_IF_CONDITIONAL cond_block)* (ELSE_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE)?;
 
-else_if_block
-	: ELSE_IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE?;
-
-else_block
-    : ELSE_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE;
-    
+cond_block
+	: ELSE_IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE;
+ 
 //Value which can be compared
 cond_val
-	: expr 
-	| STRING
-	| STRING ADD_OPERATOR expr
-	| BOOLEAN;
+	: expr #expression
+	| STRING #stringLiteral
+	| STRING ADD_OPERATOR STRING #stringConcatString
+	| STRING ADD_OPERATOR expr #stringConcatExpr
+	| BOOLEAN #booleanLiteral ;
 ////
 
 condition
-	: NOT_OPERATOR? OPEN_PAR condition CLOSE_PAR
-	| condition AND_OPERATOR condition
-	| condition OR_OPERATOR condition
-	| cond_val cond_operator cond_val;
+	: NOT_OPERATOR? OPEN_PAR condition CLOSE_PAR #parenCondition
+	| condition AND_OPERATOR condition #andCondition
+	| condition OR_OPERATOR condition #orCondition
+	| cond_val cond_operator cond_val #conditionOperator;
 	
 cond_operator
 	: LESS_THAN_OPERATOR

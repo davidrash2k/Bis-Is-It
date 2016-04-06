@@ -40,13 +40,13 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterMain_Func(BisParser.Main_FuncContext ctx) { }
+	@Override public void enterMainFunc(BisParser.MainFuncContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitMain_Func(BisParser.Main_FuncContext ctx) { }
+	@Override public void exitMainFunc(BisParser.MainFuncContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -172,13 +172,37 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVar(BisParser.VarContext ctx) { }
+	@Override public void enterMultipleVar(BisParser.MultipleVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVar(BisParser.VarContext ctx) { }
+	@Override public void exitMultipleVar(BisParser.MultipleVarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSingleVar(BisParser.SingleVarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSingleVar(BisParser.SingleVarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayVar(BisParser.ArrayVarContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayVar(BisParser.ArrayVarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -220,13 +244,25 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterAss_state(BisParser.Ass_stateContext ctx) { }
+	@Override public void enterNormalAssign(BisParser.NormalAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitAss_state(BisParser.Ass_stateContext ctx) { }
+	@Override public void exitNormalAssign(BisParser.NormalAssignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOperatorAssign(BisParser.OperatorAssignContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOperatorAssign(BisParser.OperatorAssignContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -292,13 +328,73 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNum_val(BisParser.Num_valContext ctx) { }
+	@Override public void enterIntegerLiteral(BisParser.IntegerLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNum_val(BisParser.Num_valContext ctx) { }
+	@Override public void exitIntegerLiteral(BisParser.IntegerLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFloatLiteral(BisParser.FloatLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFloatLiteral(BisParser.FloatLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCharLiteral(BisParser.CharLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCharLiteral(BisParser.CharLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFunctionCall(BisParser.FunctionCallContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFunctionCall(BisParser.FunctionCallContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterArrayIdentifier(BisParser.ArrayIdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayIdentifier(BisParser.ArrayIdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVarIdentifier(BisParser.VarIdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarIdentifier(BisParser.VarIdentifierContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -316,18 +412,6 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterIntLiteral(BisParser.IntLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIntLiteral(BisParser.IntLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterAddOrSubtract(BisParser.AddOrSubtractContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -335,6 +419,18 @@ public class BisBaseListener implements BisListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitAddOrSubtract(BisParser.AddOrSubtractContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNumberValue(BisParser.NumberValueContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNumberValue(BisParser.NumberValueContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -364,49 +460,121 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElse_if_block(BisParser.Else_if_blockContext ctx) { }
+	@Override public void enterCond_block(BisParser.Cond_blockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElse_if_block(BisParser.Else_if_blockContext ctx) { }
+	@Override public void exitCond_block(BisParser.Cond_blockContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterElse_block(BisParser.Else_blockContext ctx) { }
+	@Override public void enterExpression(BisParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitElse_block(BisParser.Else_blockContext ctx) { }
+	@Override public void exitExpression(BisParser.ExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCond_val(BisParser.Cond_valContext ctx) { }
+	@Override public void enterStringLiteral(BisParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCond_val(BisParser.Cond_valContext ctx) { }
+	@Override public void exitStringLiteral(BisParser.StringLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCondition(BisParser.ConditionContext ctx) { }
+	@Override public void enterStringConcatString(BisParser.StringConcatStringContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCondition(BisParser.ConditionContext ctx) { }
+	@Override public void exitStringConcatString(BisParser.StringConcatStringContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterStringConcatExpr(BisParser.StringConcatExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStringConcatExpr(BisParser.StringConcatExprContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBooleanLiteral(BisParser.BooleanLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBooleanLiteral(BisParser.BooleanLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOrCondition(BisParser.OrConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOrCondition(BisParser.OrConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAndCondition(BisParser.AndConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAndCondition(BisParser.AndConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterConditionOperator(BisParser.ConditionOperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditionOperator(BisParser.ConditionOperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParenCondition(BisParser.ParenConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParenCondition(BisParser.ParenConditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
