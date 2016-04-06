@@ -7,6 +7,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Jolo Simeon/Projects/BisIsItTalaga/lib/antlr-4.5.2-complete.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Zehcnas/Documents/Dev Resources/antlr-4.5.2-complete.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
