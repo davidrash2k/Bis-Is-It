@@ -37,7 +37,13 @@ public class Function extends Symbol {
 		return parameters;
 	}
 	
+	public BisParser.FuncContext getContext() {
+		return ctx;
+	}
 	
+	public void setContext(BisParser.FuncContext ctx){
+		this.ctx = ctx;
+	}
 
 	public void setParameters(ArrayList<Variable> parameters) {
 		this.parameters = parameters;

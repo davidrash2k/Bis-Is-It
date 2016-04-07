@@ -34,10 +34,7 @@ func_call_state
 	: func_call TERMINATOR;
 	 
 func_call
-	: FUNC_CALL FUNC_IDENTIFIER OPEN_PAR call_params? CLOSE_PAR;
-
-call_params
-	: val (COMMA call_params)*;
+	: FUNC_CALL FUNC_IDENTIFIER OPEN_PAR (val (COMMA val)*)? CLOSE_PAR;
 	 	
 /* Code Block */
 codeblock 
@@ -89,7 +86,11 @@ assignment
 
 //Value which can be assigned to a variable/passed to function
 val
-	: cond_val 
+	: expr
+	| STRING 
+	| STRING ADD_OPERATOR STRING 
+	| STRING ADD_OPERATOR expr 
+	| BOOLEAN 
 	| condition;
 /////
 	
@@ -127,7 +128,7 @@ cond_state
 	: IF_CONDITIONAL cond_block (ELSE_IF_CONDITIONAL cond_block)* (ELSE_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE)?;
 
 cond_block
-	: ELSE_IF_CONDITIONAL OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE;
+	: OPEN_PAR condition CLOSE_PAR THEN_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE;
  
 //Value which can be compared
 cond_val
@@ -142,16 +143,8 @@ condition
 	: NOT_OPERATOR? OPEN_PAR condition CLOSE_PAR #parenCondition
 	| condition AND_OPERATOR condition #andCondition
 	| condition OR_OPERATOR condition #orCondition
-	| cond_val cond_operator cond_val #conditionOperator;
+	| cond_val (LESS_THAN_OPERATOR | GREATER_THAN_OPERATOR | LESS_THAN_EQUAL_TO_OPERATOR | GREATER_THAN_EQUAL_TO_OPERATOR | NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR) cond_val #conditionOperator;
 	
-cond_operator
-	: LESS_THAN_OPERATOR
-	| GREATER_THAN_OPERATOR 
-	| LESS_THAN_EQUAL_TO_OPERATOR
-	| GREATER_THAN_EQUAL_TO_OPERATOR 
-	| EQUAL_TO_OPERATOR 
-	| NOT_EQUAL_TO_OPERATOR;
-
 /* Loop Statements */
 while_state
 	: WHILE_LOOP OPEN_PAR condition CLOSE_PAR OPEN_BRE codeblock CLOSE_BRE;

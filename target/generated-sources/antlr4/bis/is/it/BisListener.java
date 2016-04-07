@@ -90,16 +90,6 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitFunc_call(BisParser.Func_callContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link BisParser#call_params}.
-	 * @param ctx the parse tree
-	 */
-	void enterCall_params(BisParser.Call_paramsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link BisParser#call_params}.
-	 * @param ctx the parse tree
-	 */
-	void exitCall_params(BisParser.Call_paramsContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link BisParser#codeblock}.
 	 * @param ctx the parse tree
 	 */
@@ -527,16 +517,6 @@ public interface BisListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParenCondition(BisParser.ParenConditionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link BisParser#cond_operator}.
-	 * @param ctx the parse tree
-	 */
-	void enterCond_operator(BisParser.Cond_operatorContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link BisParser#cond_operator}.
-	 * @param ctx the parse tree
-	 */
-	void exitCond_operator(BisParser.Cond_operatorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#while_state}.
 	 * @param ctx the parse tree

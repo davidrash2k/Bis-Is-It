@@ -37,7 +37,10 @@ public class Variable extends Symbol {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return " Data Type:" + data_type + " Name:" + name + " Value:" + value.toString();
+		if (value == null)
+			return " Data Type:" + data_type + " Name:" + name + " Value: null";
+		else
+			return " Data Type:" + data_type + " Name:" + name + " Value: " + value.toString();
 	}
 
 }

@@ -112,18 +112,6 @@ public class BisBaseListener implements BisListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCall_params(BisParser.Call_paramsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCall_params(BisParser.Call_paramsContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterCodeblock(BisParser.CodeblockContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -575,18 +563,6 @@ public class BisBaseListener implements BisListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitParenCondition(BisParser.ParenConditionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterCond_operator(BisParser.Cond_operatorContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitCond_operator(BisParser.Cond_operatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

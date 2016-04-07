@@ -10,6 +10,7 @@ public class Scope {
 	
 	public Scope(ScopeType type, String scopeName) {
 		 symbolMap = new HashMap<String, Symbol>();
+		 this.scopeName = scopeName;
 	}
 	
 	/*Add function to Symbol Table*/
@@ -32,9 +33,21 @@ public class Scope {
 	public ScopeType getType() {
 		return type;
 	}
+	
+	public String getName() {
+		return scopeName;
+	}
+	
+	public void setName(String scopeName) {
+		this.scopeName = scopeName;
+	}
 
 	public void setType(ScopeType type) {
 		this.type = type;
+	}
+	
+	public String getList() {
+		return symbolMap.toString();
 	}
 	
 	

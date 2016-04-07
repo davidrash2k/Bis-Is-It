@@ -73,13 +73,6 @@ public class BisBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Bi
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCall_params(BisParser.Call_paramsContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
 	@Override public T visitCodeblock(BisParser.CodeblockContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -340,13 +333,6 @@ public class BisBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Bi
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitParenCondition(BisParser.ParenConditionContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitCond_operator(BisParser.Cond_operatorContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

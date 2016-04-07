@@ -60,12 +60,6 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunc_call(BisParser.Func_callContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link BisParser#call_params}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCall_params(BisParser.Call_paramsContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link BisParser#codeblock}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -317,12 +311,6 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitParenCondition(BisParser.ParenConditionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BisParser#cond_operator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCond_operator(BisParser.Cond_operatorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#while_state}.
 	 * @param ctx the parse tree

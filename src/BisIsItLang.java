@@ -30,7 +30,7 @@ public class BisIsItLang
      */
     public static void main(String[] args) throws IOException
     {
-    	String filename = "test\\input.txt";
+    	String filename = "test\\sample.txt";
     	
     	
     	BisLexer lexer2 = new BisLexer ( new ANTLRFileStream(filename));
@@ -95,7 +95,7 @@ public class BisIsItLang
 			}
         });
         
-        frame.add(scaleSlider, BorderLayout.NORTH);
+        //frame.add(scaleSlider, BorderLayout.NORTH);
         frame.add(panel);
         frame.add(new JScrollPane(panel), BorderLayout.CENTER);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

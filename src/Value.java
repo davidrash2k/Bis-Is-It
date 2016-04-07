@@ -27,8 +27,8 @@ public class Value {
 	}
 	
 
-	public Double getDoubleAt(int index) {
-		return (Double) valArray[index];
+	public double getDoubleAt(int index) {
+		return (double) valArray[index];
 	}
 	
 	public int getIntAt(int index) {
@@ -48,11 +48,11 @@ public class Value {
     }
     
     public Integer asInt() {
-    	return (int)value;
+    	return new Integer(value.toString());
     }
 
     public Double asDouble() {
-        return (Double)value;
+        return new Double(value.toString());
     }
 
     public String asString() {
@@ -95,6 +95,10 @@ public class Value {
 
     @Override
     public String toString() {
-        return String.valueOf(value);
+    	if (value != null)
+        return 
+        		String.valueOf(value);
+    	else
+    		return String.valueOf(valArray.toString());
     }
 }

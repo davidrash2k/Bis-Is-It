@@ -8,7 +8,7 @@ ibalik _uno + _dos ;
 sugod_diri >>>
 {
 numero _ab;
-_ab = (2+3);
+_ab = tawaga func.addNumbers(2, 3);
 }
 
 

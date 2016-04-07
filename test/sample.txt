@@ -5,29 +5,34 @@ numero func.ano >> >>>
   numero $3$ _arr;
   _arr$0$ = 1;
   numero _ito = 10 + 0.5^2;
-  habang ( _ito > 0 )
+  numero _hindiIto = 9;
+  lutaw _dito;
+  habang ( _ito < 11 )
   {
-	habang ( _hindiIto < 10 o 10 == 1 ug dili(1 < -1))
+  	habang (_hindiIto <= 10)
+    {
+        _dito = 5;
+        kung ( dili (_hindiIto < 10 o 10 == 1 ug dili(1 < -1))) di
         {
-           kung ( dili (_hindiIto < 10 o 10 == 1 ug dili(1 < -1))) di
-           {
-               _ito = 2;
-           }
-           kungdili ( _ito >= 2) di
-           {
-               _dito = 3;
-           }
-           kungwalagyud
-           {
-  	        tawaga func.sulat("Ito yun e" + _hindiIto);
-                _ito--;
-           }
-	}
+          _ito = 2;
+        }
+        kungdili ( _ito >= 2) di
+        {
+          _dito = 3;
+        }
+        kungwalagyud
+        {
+    	   /*tawaga func.sulat("Ito yun e" + _hindiIto);*/
+          _ito--;
+        }
+        _hindiIto++;
+  	}
+    _ito++;
   }
   ibalik _ito;
 }
 
 sugod_diri >>>
 {
-  tawaga func.sulat("Hello World", tawaga func.ano());
+  numero _ito = tawaga func.ano();
 }

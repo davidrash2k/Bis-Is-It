@@ -2,6 +2,7 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
@@ -27,6 +28,19 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 		return hasError;
 	}
 	
+	public Value visitMainFunc(BisParser.MainFuncContext ctx) {
+		scopes.push(new Scope(ScopeType.LOCAL, "Main"));
+		visitChildren(ctx);
+		return Value.VOID;
+	}
+	
+	public Value visitStatement(BisParser.StatementContext ctx){
+		visitChildren(ctx);
+		System.out.println("Current Scope: " + scopes.peek().getName());
+		System.out.println(scopes.peek().getList());
+		return Value.VOID;
+	}
+	
 	/*Data Type*/
 	public Value visitData_type(BisParser.Data_typeContext ctx) {
 		Value val = null;
@@ -35,7 +49,7 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 		if (ctx.getChild(0) == ctx.CHAR_TYPE())
 			val = new Value("char");
 		if (ctx.getChild(0) == ctx.INT_TYPE())
-			val = new Value("integer");
+			val = new Value("int");
 		if (ctx.getChild(0) == ctx.STRING_TYPE())
 			val = new Value("String");
 		if (ctx.getChild(0) == ctx.FLOAT_TYPE())
@@ -86,9 +100,6 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 	public Value visitNormalAssign(BisParser.NormalAssignContext ctx) {
 		//TODO: Add type checking to check if variable exists, is an array if array siya, if kasya sa array, check if variable is not static, check if value assigned is legit
 		String id = ctx.VAR_IDENTIFIER().getText();
-		if (ctx.arr() != null) {
-			id += "[]";
-		}
 		Variable var = (Variable) scopes.peek().lookup(id);
 		
 		if (ctx.arr() != null) {
@@ -106,9 +117,6 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 	public Value visitAss_state_operator(BisParser.Ass_state_operatorContext ctx) {
 		//TODO: Add type checking to check if variable exists, is an array if array siya, if kasya sa array, check if pwede talaga i-increment/decrement (check if char, int, double)
 		String id = ctx.VAR_IDENTIFIER().getText();
-		if (ctx.arr() != null) {
-			id += "[]";
-		}
 		Variable var = (Variable) scopes.peek().lookup(id);
 		if (ctx.ass_operator().getChild(0) == ctx.ass_operator().INCREMENT_OPERATOR()) {
 			if (ctx.arr() != null) {
@@ -139,6 +147,7 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 			if (ctx.unary_op().getText().equals("-"))
 				literal = literal * -1;
 		}
+		//System.out.println(literal);
 		return new Value(literal);
 	}
 	
@@ -192,8 +201,7 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 	/*Value of a Function Call*/
 	@Override
 	public Value visitFunctionCall(BisParser.FunctionCallContext ctx){
-		//TODO: check if function returns legit etc etc
-		return null;
+		return this.visit(ctx.func_call());
 	}
 	//////////////////////////////////////////////////////////////////////////////
 	/*Expressions na itu*/
@@ -317,22 +325,22 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 		Value left = this.visit(ctx.getChild(0));
 		Value right = this.visit(ctx.getChild(2));
 		boolean result = false;
-		if (ctx.getChild(1) == ctx.cond_operator().LESS_THAN_OPERATOR()){
+		if (ctx.getChild(1) == ctx.LESS_THAN_OPERATOR()){
 			result = left.asDouble() < right.asDouble();
 		}
-		else if (ctx.getChild(1) == ctx.cond_operator().LESS_THAN_EQUAL_TO_OPERATOR()){
+		else if (ctx.getChild(1) == ctx.LESS_THAN_EQUAL_TO_OPERATOR()){
 			result = left.asDouble() <= right.asDouble();
 		}
-		else if (ctx.getChild(1) == ctx.cond_operator().GREATER_THAN_EQUAL_TO_OPERATOR()){
+		else if (ctx.getChild(1) == ctx.GREATER_THAN_EQUAL_TO_OPERATOR()){
 			result = left.asDouble() >= right.asDouble();
 		}
-		else if (ctx.getChild(1) == ctx.cond_operator().GREATER_THAN_OPERATOR()){
+		else if (ctx.getChild(1) == ctx.GREATER_THAN_OPERATOR()){
 			result = left.asDouble() > right.asDouble();
 		}
-		else if (ctx.getChild(1) == ctx.cond_operator().EQUAL_TO_OPERATOR()){
+		else if (ctx.getChild(1) == ctx.EQUAL_TO_OPERATOR()){
 			result = left.asDouble() == right.asDouble();
 		}
-		else if (ctx.getChild(1) == ctx.cond_operator().NOT_EQUAL_TO_OPERATOR()){
+		else if (ctx.getChild(1) == ctx.NOT_EQUAL_TO_OPERATOR()){
 			result = left.asDouble() != right.asDouble();
 		}
 		return new Value(result);
@@ -365,6 +373,7 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 	@Override
 	public Value visitWhile_state(BisParser.While_stateContext ctx){
 		Value value = this.visit(ctx.condition());
+		System.out.println(value.asBoolean());
         while(value.asBoolean()) {
             // evaluate the code block
             this.visit(ctx.codeblock());
@@ -407,6 +416,14 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
         return Value.VOID;
 	}
 	
+	/*Return Statement*/
+	public Value visitReturn_state(BisParser.Return_stateContext ctx){
+		Value returnValue = this.visit(ctx.val());
+		System.out.println("Current Scope: " + scopes.peek().getName());
+		System.out.println(scopes.peek().getList());
+		return returnValue;
+	}
+	
 	/*Function Data Type*/
 	public Value visitFunc_data_type(BisParser.Func_data_typeContext ctx) {
 		if (ctx.getChild(0) == ctx.VOID_TYPE())
@@ -432,71 +449,65 @@ public class BisBaseVisitorImplementer extends BisBaseVisitor<Value>{
 				signature += datatype + ",";
 			}
 			if (signature.charAt(signature.length() - 1) != '(')
-				//signature[signature.length()-1] = ')'
-				;
+				signature = signature.substring(0,signature.length() - 1) + ")";
 			else
 				signature += ")";
-			masterFuncList.add(new Function(returnType, signature, paramList, function));
+			Function newFunc = new Function(returnType, signature, paramList, function);
+			newFunc.setName(function.FUNC_IDENTIFIER().getText());
+			masterFuncList.add(newFunc);
 		}
-		
-		ArrayList<String> stringList = new ArrayList<String>(Arrays.asList(ctx.getText().split(">>")));
-		ArrayList<String> funcNameAndReturnType;
-		
 
-		
-		
-		//funcNameAndReturnType = new ArrayList<String>(Arrays.asList(stringList.get(0).split("func.")));
-		//varList = new ArrayList<String>(Arrays.asList(stringList.get(1).split(",")));
-		
-		//STORE FUNC SIGNATURE AND RETURN TYPE
-		String returnType, signature;
-//		returnType = funcNameAndReturnType.get(0);
-//		signature = "_" + funcNameAndReturnType.get(1);
-		
-		//STORE FUNC PARAMS 
-		Variable var;
-		String[] varArr = new String[2];
-		String varName = "";
-			
-		
-		
-		//masterFuncList.add(new Function(returnType, signature, paramList));
-		
-		
-		//FOR DEBUGGING PURPOSES
-		for(int i = 0; i < masterFuncList.size(); i++){
-			//System.out.println(masterFuncList.get(i).toString());
-		}
-		
 		return Value.VOID; 
 	}
 	
-	/*Function Call*/
+	/*Function Call*/	
 	@Override
 	public Value visitFunc_call(BisParser.Func_callContext ctx){
 		Value returnValue = null;
+
+		String funcSignature = ctx.FUNC_IDENTIFIER().getText();
+		//TODO: add data types of parameters for signature, check if params is legit
+	
+		Function calledFunc = findFunction(funcSignature);
 		
-		//Get function name and data types of parameters
-		
-		//TODO: check if funciton exists
-		//Function calledFunc = 
-		
-		//Push function into scope
-		//scopes.push(new Scope(ScopeType.LOCAL, ));
-		
-		//Run codeblock
-		
-		//Pop function from scope
-		
-		//Return value if any
-		
+		if (calledFunc != null){
+			
+			//Push function into scope
+			Scope funcScope = new Scope(ScopeType.LOCAL, calledFunc.getName());
+			
+			//bind parameters as variables in new scope
+			List<BisParser.ParamsContext> params =  calledFunc.getContext().params();
+			List<BisParser.ValContext> vals = ctx.val();
+			
+			Iterator<BisParser.ParamsContext> it1 = params.iterator();
+			Iterator<BisParser.ValContext> it2 = vals.iterator();
+			
+			while (it1.hasNext() && it2.hasNext()){
+				BisParser.ParamsContext param = it1.next();
+				String datatype = this.visit(param.data_type()).asString();
+				Variable var = new Variable(datatype, param.VAR_IDENTIFIER().getText(), new Value(it2.next().getText()));
+				//System.out.println(var.toString());
+				funcScope.bind(var);
+			}
+			
+			scopes.push(funcScope);
+			
+			//Run codeblock
+			this.visit(calledFunc.getContext().codeblock());
+			returnValue = this.visit((calledFunc.getContext().return_state()));
+			
+			//Pop function from scope
+			scopes.pop();
+		}
+		//return value if any
 		return returnValue;
 	}
 	
 	/*Personal Functions*/
-	public Function findFunction(String signature, String returntype) {
+	public Function findFunction(String signature) {
 		for (int i = 0; i < masterFuncList.size(); i++)
-			if (masterFuncList.get(i).getSignature().equals(signature) && returntype.equals(masterFuncList.get(i).getReturn_type()))
+			//change to equals signature later
+			if (masterFuncList.get(i).getSignature().contains(signature))
 				return masterFuncList.get(i);
 		return null;
 	}
