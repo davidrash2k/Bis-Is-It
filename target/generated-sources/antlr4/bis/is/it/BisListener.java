@@ -40,6 +40,36 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitMainFunc(BisParser.MainFuncContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link BisParser#scan}.
+	 * @param ctx the parse tree
+	 */
+	void enterScan(BisParser.ScanContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BisParser#scan}.
+	 * @param ctx the parse tree
+	 */
+	void exitScan(BisParser.ScanContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BisParser#print}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrint(BisParser.PrintContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BisParser#print}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrint(BisParser.PrintContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link BisParser#printnl}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrintnl(BisParser.PrintnlContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link BisParser#printnl}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrintnl(BisParser.PrintnlContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link BisParser#func}.
 	 * @param ctx the parse tree
 	 */
@@ -165,16 +195,6 @@ public interface BisListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitArrayVar(BisParser.ArrayVarContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link BisParser#func_data_type}.
-	 * @param ctx the parse tree
-	 */
-	void enterFunc_data_type(BisParser.Func_data_typeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link BisParser#func_data_type}.
-	 * @param ctx the parse tree
-	 */
-	void exitFunc_data_type(BisParser.Func_data_typeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link BisParser#data_type}.
 	 * @param ctx the parse tree
@@ -390,6 +410,54 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitParenExpr(BisParser.ParenExprContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code stringConcatString}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringConcatString(BisParser.StringConcatStringContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringConcatString}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringConcatString(BisParser.StringConcatStringContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code soloerString}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void enterSoloerString(BisParser.SoloerStringContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code soloerString}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void exitSoloerString(BisParser.SoloerStringContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringConcatExpr}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringConcatExpr(BisParser.StringConcatExprContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringConcatExpr}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringConcatExpr(BisParser.StringConcatExprContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringConcatFuncCall}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringConcatFuncCall(BisParser.StringConcatFuncCallContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringConcatFuncCall}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringConcatFuncCall(BisParser.StringConcatFuncCallContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link BisParser#cond_state}.
 	 * @param ctx the parse tree
 	 */
@@ -434,30 +502,6 @@ public interface BisListener extends ParseTreeListener {
 	 */
 	void exitStringLiteral(BisParser.StringLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code stringConcatString}
-	 * labeled alternative in {@link BisParser#cond_val}.
-	 * @param ctx the parse tree
-	 */
-	void enterStringConcatString(BisParser.StringConcatStringContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code stringConcatString}
-	 * labeled alternative in {@link BisParser#cond_val}.
-	 * @param ctx the parse tree
-	 */
-	void exitStringConcatString(BisParser.StringConcatStringContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code stringConcatExpr}
-	 * labeled alternative in {@link BisParser#cond_val}.
-	 * @param ctx the parse tree
-	 */
-	void enterStringConcatExpr(BisParser.StringConcatExprContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code stringConcatExpr}
-	 * labeled alternative in {@link BisParser#cond_val}.
-	 * @param ctx the parse tree
-	 */
-	void exitStringConcatExpr(BisParser.StringConcatExprContext ctx);
-	/**
 	 * Enter a parse tree produced by the {@code booleanLiteral}
 	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
@@ -481,6 +525,18 @@ public interface BisListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitOrCondition(BisParser.OrConditionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code stringVsString}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringVsString(BisParser.StringVsStringContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code stringVsString}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringVsString(BisParser.StringVsStringContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code andCondition}
 	 * labeled alternative in {@link BisParser#condition}.

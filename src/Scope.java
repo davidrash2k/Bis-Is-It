@@ -1,16 +1,21 @@
 import java.util.HashMap;
 import java.util.Map;
 
+import org.antlr.v4.runtime.RuleContext;
+
 
 public class Scope {
 	
 	private ScopeType type;
 	private Map<String, Symbol> symbolMap;
 	private String scopeName;
+	private RuleContext caller;
+	private Value returnValue;
 	
-	public Scope(ScopeType type, String scopeName) {
+	public Scope(ScopeType type, String scopeName, RuleContext caller) {
 		 symbolMap = new HashMap<String, Symbol>();
 		 this.scopeName = scopeName;
+		 this.caller = caller;
 	}
 	
 	/*Add function to Symbol Table*/
@@ -49,6 +54,39 @@ public class Scope {
 	public String getList() {
 		return symbolMap.toString();
 	}
+
+	public String getScopeName() {
+		return scopeName;
+	}
+
+	public void setScopeName(String scopeName) {
+		this.scopeName = scopeName;
+	}
+
+	public RuleContext getCaller() {
+		return caller;
+	}
+
+	public void setCaller(RuleContext caller) {
+		this.caller = caller;
+	}
+
+	public Value getReturnValue() {
+		return returnValue;
+	}
+
+	public void setReturnValue(Value returnValue) {
+		this.returnValue = returnValue;
+	}
+
+	public Map<String, Symbol> getSymbolMap() {
+		return symbolMap;
+	}
+
+	public void setSymbolMap(Map<String, Symbol> symbolMap) {
+		this.symbolMap = symbolMap;
+	}
+	
 	
 	
 }

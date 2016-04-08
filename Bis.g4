@@ -19,9 +19,21 @@ func_define
 main_func
 	: MAIN_FUNC FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE #mainFunc ;
 
+/*Scanf */
+scan
+	: INPUT OPEN_PAR data_type VAR_IDENTIFIER CLOSE_PAR TERMINATOR;
+
+/*Printf */
+print
+	: OUTPUT OPEN_PAR stringParty CLOSE_PAR TERMINATOR;
+
+printnl
+	: OUTPUTNL OPEN_PAR stringParty CLOSE_PAR TERMINATOR;
+
 /* Defining a Function */
 func 
-	: func_data_type FUNC_IDENTIFIER PARAMS_KEYWORD (params (COMMA params)*)? FUNC_DEFINITION OPEN_BRE codeblock return_state? CLOSE_BRE;
+	: VOID_TYPE FUNC_IDENTIFIER PARAMS_KEYWORD (params (COMMA params)*)? FUNC_DEFINITION OPEN_BRE codeblock CLOSE_BRE
+	| data_type FUNC_IDENTIFIER PARAMS_KEYWORD (params (COMMA params)*)? FUNC_DEFINITION OPEN_BRE codeblock return_state CLOSE_BRE;
 	
 params
 	: data_type VAR_IDENTIFIER;
@@ -48,7 +60,11 @@ statement
 	| while_state 
 	| do_while_state 
 	| for_state 
-	| func_call_state;
+	| func_call_state
+	| scan
+	| print
+	| return_state
+	| printnl;
 	
 /* Variable Declaration */
 vardec_state
@@ -62,10 +78,6 @@ vardec
 	| data_type VAR_IDENTIFIER assignment? #singleVar
 	| data_type arr VAR_IDENTIFIER #arrayVar;
 
-func_data_type
-	: data_type
-	| VOID_TYPE;
-	
 data_type
 	: INT_TYPE 
 	| FLOAT_TYPE
@@ -123,6 +135,13 @@ expr
     | expr (ADD_OPERATOR|SUBTRACT_OPERATOR) expr       # addOrSubtract
     | num_val                   # numberValue;
 
+/*String concat Functions */
+stringParty
+	: STRING #soloerString
+	| stringParty ADD_OPERATOR stringParty #stringConcatString
+	| stringParty ADD_OPERATOR expr #stringConcatExpr
+	| stringParty ADD_OPERATOR func_call #stringConcatFuncCall;
+
 /* Conditional Statement */
 cond_state
 	: IF_CONDITIONAL cond_block (ELSE_IF_CONDITIONAL cond_block)* (ELSE_CONDITIONAL OPEN_BRE codeblock CLOSE_BRE)?;
@@ -134,8 +153,6 @@ cond_block
 cond_val
 	: expr #expression
 	| STRING #stringLiteral
-	| STRING ADD_OPERATOR STRING #stringConcatString
-	| STRING ADD_OPERATOR expr #stringConcatExpr
 	| BOOLEAN #booleanLiteral ;
 ////
 
@@ -143,7 +160,9 @@ condition
 	: NOT_OPERATOR? OPEN_PAR condition CLOSE_PAR #parenCondition
 	| condition AND_OPERATOR condition #andCondition
 	| condition OR_OPERATOR condition #orCondition
-	| cond_val (LESS_THAN_OPERATOR | GREATER_THAN_OPERATOR | LESS_THAN_EQUAL_TO_OPERATOR | GREATER_THAN_EQUAL_TO_OPERATOR | NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR) cond_val #conditionOperator;
+	| cond_val (LESS_THAN_OPERATOR | GREATER_THAN_OPERATOR | LESS_THAN_EQUAL_TO_OPERATOR | GREATER_THAN_EQUAL_TO_OPERATOR | NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR) cond_val #conditionOperator
+	| stringParty (LESS_THAN_OPERATOR | GREATER_THAN_OPERATOR | LESS_THAN_EQUAL_TO_OPERATOR | GREATER_THAN_EQUAL_TO_OPERATOR | NOT_EQUAL_TO_OPERATOR | EQUAL_TO_OPERATOR) stringParty #stringVsString;
+	
 	
 /* Loop Statements */
 while_state
@@ -167,8 +186,12 @@ FLOAT : DIGIT ('.'DIGIT)? | ('.'DIGIT);
 STRING: '"' (' '..'~')* '"';
 CHAR:  '\'' . '\'';
 BOOLEAN: 'tinood' | 'ditinood';
-VAR_IDENTIFIER:  '_'[a-z][A-za-z]+DIGIT*;
+FUNC_CALL: 'tawaga';
+VAR_IDENTIFIER:  '_'[a-z][A-za-z]*DIGIT*;
 ASS_OPERATOR: '=';
+INPUT: 'basaha';
+OUTPUT: 'suwata';
+OUTPUTNL: 'suwataBL';
 INT_TYPE: 'numero';
 FLOAT_TYPE: 'lutaw';
 STRING_TYPE:'pisi';
@@ -206,12 +229,11 @@ OR_OPERATOR: 'o';
 NOT_OPERATOR: 'dili';
 ARRAY_DELIM: '$';
 CONSTANT: 'hantodhantod';
-FUNC_IDENTIFIER: 'func.'[a-z][A-za-z]+DIGIT*;
+FUNC_IDENTIFIER: 'func.'[a-z][A-za-z]*DIGIT*;
 COMMA: ',';
 INCREMENT_OPERATOR: '++';
 DECREMENT_OPERATOR: '--';
 FUNC_DEFINITION: '>>>';
-FUNC_CALL: 'tawaga';
 PARAMS_KEYWORD: '>>';
 MAIN_FUNC: 'sugod_diri';
 RETURN: 'ibalik';

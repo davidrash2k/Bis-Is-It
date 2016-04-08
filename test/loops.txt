@@ -1,0 +1,20 @@
+wala func.gawaTriangle >> numero _n >>>
+{
+	numero _i, numero _j;
+	para (_i = 1; _i <= _n; _i++)
+	{
+		para (_j = 1; _j <= _i; _j++)
+		{
+			suwata("*");
+		}
+		suwataBL("");
+	}
+}
+
+sugod_diri >>>
+{
+	numero _val;
+	suwataBL("Please enter a value: ");
+	basaha(numero _val);
+  	tawaga func.gawaTriangle(_val);
+}

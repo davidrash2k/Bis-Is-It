@@ -1,0 +1,16 @@
+numero func.factorial >> numero _n >>>
+{
+  kung (_n == 0) di
+  { 
+  	ibalik (1); /* 0! = 1*/
+  }          
+  ibalik _n * tawaga func.factorial(_n - 1);  /*General function: n! = n * (n - 1)!*/
+} 
+
+sugod_diri >>>
+{
+	numero _val;
+	suwataBL("Please enter a value to factorial: ");
+	basaha(numero _val);
+  	suwataBL("" + tawaga func.factorial(_val));
+ }

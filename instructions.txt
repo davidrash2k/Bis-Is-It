@@ -1,2 +1,9 @@
-Run BisIsIt.jar in cmd with input.txt as argument
-Ex: java -jar BisIsIt.jar input.txt
+Run BisIsIt.jar in cmd or open project in Eclipse
+BisIsIt Interpreter System
+[1]Enter program source code in Editor text box.
+[2]Select execution mode (Continuous mode or Line by line mode).
+[3]Run program.
+
+Note: "Clear" button clears out content of symbol table, function stack, and editor text boxes.
+
+Grammar is in ANTLR, Bis.g4

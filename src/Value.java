@@ -27,8 +27,8 @@ public class Value {
 	}
 	
 
-	public double getDoubleAt(int index) {
-		return (double) valArray[index];
+	public Double getDoubleAt(int index) {
+		return (Double) valArray[index];
 	}
 	
 	public int getIntAt(int index) {
@@ -44,11 +44,25 @@ public class Value {
 	}
 
     public Boolean asBoolean() {
-        return (Boolean)value;
+    	if(String.valueOf(value) == "true" || String.valueOf(value) == "false")
+    	{
+    		return Boolean.parseBoolean(String.valueOf(value));
+    	}
+    	else if((Integer) Integer.parseInt(value.toString()) instanceof Integer)
+    	{
+    		if(Integer.parseInt(value.toString()) != 0)
+    			return true;
+    		else
+    			return false;
+    	}
+    	else
+    		return false;
     }
     
     public Integer asInt() {
-    	return new Integer(value.toString());
+    	return Integer.parseInt(value.toString());
+    	
+    	
     }
 
     public Double asDouble() {
@@ -59,8 +73,8 @@ public class Value {
         return String.valueOf(value);
     }
     
-    public char asChar() {
-    	return (char)value;
+    public Character asChar() {
+    	return (Character)value;
     }
 
     public boolean isDouble() {
@@ -95,10 +109,6 @@ public class Value {
 
     @Override
     public String toString() {
-    	if (value != null)
-        return 
-        		String.valueOf(value);
-    	else
-    		return String.valueOf(valArray.toString());
+        return String.valueOf(value);
     }
 }

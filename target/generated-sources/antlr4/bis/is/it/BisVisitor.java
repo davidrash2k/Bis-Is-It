@@ -30,6 +30,24 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMainFunc(BisParser.MainFuncContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link BisParser#scan}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitScan(BisParser.ScanContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BisParser#print}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrint(BisParser.PrintContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link BisParser#printnl}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrintnl(BisParser.PrintnlContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BisParser#func}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -104,12 +122,6 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitArrayVar(BisParser.ArrayVarContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link BisParser#func_data_type}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFunc_data_type(BisParser.Func_data_typeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link BisParser#data_type}.
 	 * @param ctx the parse tree
@@ -237,6 +249,34 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParenExpr(BisParser.ParenExprContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code stringConcatString}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringConcatString(BisParser.StringConcatStringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code soloerString}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSoloerString(BisParser.SoloerStringContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code stringConcatExpr}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringConcatExpr(BisParser.StringConcatExprContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code stringConcatFuncCall}
+	 * labeled alternative in {@link BisParser#stringParty}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringConcatFuncCall(BisParser.StringConcatFuncCallContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link BisParser#cond_state}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -263,20 +303,6 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStringLiteral(BisParser.StringLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code stringConcatString}
-	 * labeled alternative in {@link BisParser#cond_val}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStringConcatString(BisParser.StringConcatStringContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code stringConcatExpr}
-	 * labeled alternative in {@link BisParser#cond_val}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStringConcatExpr(BisParser.StringConcatExprContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code booleanLiteral}
 	 * labeled alternative in {@link BisParser#cond_val}.
 	 * @param ctx the parse tree
@@ -290,6 +316,13 @@ public interface BisVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOrCondition(BisParser.OrConditionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code stringVsString}
+	 * labeled alternative in {@link BisParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStringVsString(BisParser.StringVsStringContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code andCondition}
 	 * labeled alternative in {@link BisParser#condition}.
